@@ -1,0 +1,18 @@
+# Core dependencies
+openai>=1.0.0
+click>=8.0.0
+pydantic>=2.0.0
+diagrams>=0.23.0
+python-dotenv>=1.0.0
+rich>=13.0.0
+
+# MCP support
+mcp>=1.0.0
+
+# Development dependencies (optional)
+pytest>=7.0.0
+pytest-cov>=4.0.0
+black>=23.0.0
+isort>=5.0.0
+mypy>=1.0.0
+flake8>=6.0.0

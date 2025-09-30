@@ -1,0 +1,2277 @@
+{
+  "gcp": {
+    "devtools": [
+      "Build",
+      "CodeForIntellij",
+      "Code",
+      "ContainerRegistry",
+      "GradleAppEnginePlugin",
+      "IdePlugins",
+      "MavenAppEnginePlugin",
+      "Scheduler",
+      "SDK",
+      "SourceRepositories",
+      "Tasks",
+      "TestLab",
+      "ToolsForEclipse",
+      "ToolsForPowershell",
+      "ToolsForVisualStudio"
+    ],
+    "analytics": [
+      "Bigquery",
+      "Composer",
+      "DataCatalog",
+      "DataFusion",
+      "Dataflow",
+      "Datalab",
+      "Dataprep",
+      "Dataproc",
+      "Genomics",
+      "Pubsub"
+    ],
+    "database": [
+      "Bigtable",
+      "Datastore",
+      "Firestore",
+      "Memorystore",
+      "Spanner",
+      "SQL"
+    ],
+    "storage": [
+      "Filestore",
+      "PersistentDisk",
+      "Storage"
+    ],
+    "operations": [
+      "Logging",
+      "Monitoring"
+    ],
+    "migration": [
+      "TransferAppliance"
+    ],
+    "security": [
+      "Iam",
+      "IAP",
+      "KeyManagementService",
+      "ResourceManager",
+      "SecurityCommandCenter",
+      "SecurityScanner"
+    ],
+    "compute": [
+      "AppEngine",
+      "ComputeEngine",
+      "ContainerOptimizedOS",
+      "Functions",
+      "GKEOnPrem",
+      "GPU",
+      "KubernetesEngine",
+      "Run"
+    ],
+    "api": [
+      "APIGateway",
+      "Apigee",
+      "Endpoints"
+    ],
+    "network": [
+      "Armor",
+      "CDN",
+      "DedicatedInterconnect",
+      "DNS",
+      "ExternalIpAddresses",
+      "FirewallRules",
+      "LoadBalancing",
+      "NAT",
+      "Network",
+      "PartnerInterconnect",
+      "PremiumNetworkTier",
+      "Router",
+      "Routes",
+      "StandardNetworkTier",
+      "TrafficDirector",
+      "VirtualPrivateCloud",
+      "VPN"
+    ],
+    "ml": [
+      "AdvancedSolutionsLab",
+      "AIHub",
+      "AIPlatformDataLabelingService",
+      "AIPlatform",
+      "AutomlNaturalLanguage",
+      "AutomlTables",
+      "AutomlTranslation",
+      "AutomlVideoIntelligence",
+      "AutomlVision",
+      "Automl",
+      "DialogFlowEnterpriseEdition",
+      "InferenceAPI",
+      "JobsAPI",
+      "NaturalLanguageAPI",
+      "RecommendationsAI",
+      "SpeechToText",
+      "TextToSpeech",
+      "TPU",
+      "TranslationAPI",
+      "VideoIntelligenceAPI",
+      "VisionAPI"
+    ],
+    "iot": [
+      "IotCore"
+    ]
+  },
+  "oci": {
+    "connectivity": [
+      "BackboneWhite",
+      "Backbone",
+      "CDNWhite",
+      "CDN",
+      "CustomerDatacenter",
+      "CustomerDatacntrWhite",
+      "CustomerPremisesWhite",
+      "CustomerPremises",
+      "DisconnectedRegionsWhite",
+      "DisconnectedRegions",
+      "DNSWhite",
+      "DNS",
+      "FastConnectWhite",
+      "FastConnect",
+      "NATGatewayWhite",
+      "NATGateway",
+      "VPNWhite",
+      "VPN"
+    ],
+    "devops": [
+      "APIGatewayWhite",
+      "APIGateway",
+      "APIServiceWhite",
+      "APIService",
+      "ResourceMgmtWhite",
+      "ResourceMgmt"
+    ],
+    "database": [
+      "AutonomousWhite",
+      "Autonomous",
+      "BigdataServiceWhite",
+      "BigdataService",
+      "DatabaseServiceWhite",
+      "DatabaseService",
+      "DataflowApacheWhite",
+      "DataflowApache",
+      "DcatWhite",
+      "Dcat",
+      "DisWhite",
+      "Dis",
+      "DMSWhite",
+      "DMS",
+      "ScienceWhite",
+      "Science",
+      "StreamWhite",
+      "Stream"
+    ],
+    "storage": [
+      "BackupRestoreWhite",
+      "BackupRestore",
+      "BlockStorageCloneWhite",
+      "BlockStorageClone",
+      "BlockStorageWhite",
+      "BlockStorage",
+      "BucketsWhite",
+      "Buckets",
+      "DataTransferWhite",
+      "DataTransfer",
+      "ElasticPerformanceWhite",
+      "ElasticPerformance",
+      "FileStorageWhite",
+      "FileStorage",
+      "ObjectStorageWhite",
+      "ObjectStorage",
+      "StorageGatewayWhite",
+      "StorageGateway"
+    ],
+    "governance": [
+      "AuditWhite",
+      "Audit",
+      "CompartmentsWhite",
+      "Compartments",
+      "GroupsWhite",
+      "Groups",
+      "LoggingWhite",
+      "Logging",
+      "OCIDWhite",
+      "OCID",
+      "PoliciesWhite",
+      "Policies",
+      "TaggingWhite",
+      "Tagging"
+    ],
+    "security": [
+      "CloudGuardWhite",
+      "CloudGuard",
+      "DDOSWhite",
+      "DDOS",
+      "EncryptionWhite",
+      "Encryption",
+      "IDAccessWhite",
+      "IDAccess",
+      "KeyManagementWhite",
+      "KeyManagement",
+      "MaxSecurityZoneWhite",
+      "MaxSecurityZone",
+      "VaultWhite",
+      "Vault",
+      "WAFWhite",
+      "WAF"
+    ],
+    "compute": [
+      "AutoscaleWhite",
+      "Autoscale",
+      "BMWhite",
+      "BM",
+      "ContainerWhite",
+      "Container",
+      "FunctionsWhite",
+      "Functions",
+      "InstancePoolsWhite",
+      "InstancePools",
+      "OCIRWhite",
+      "OCIR",
+      "OKEWhite",
+      "OKE",
+      "VMWhite",
+      "VM"
+    ],
+    "monitoring": [
+      "AlarmWhite",
+      "Alarm",
+      "EmailWhite",
+      "Email",
+      "EventsWhite",
+      "Events",
+      "HealthCheckWhite",
+      "HealthCheck",
+      "NotificationsWhite",
+      "Notifications",
+      "QueueWhite",
+      "Queue",
+      "SearchWhite",
+      "Search",
+      "TelemetryWhite",
+      "Telemetry",
+      "WorkflowWhite",
+      "Workflow"
+    ],
+    "network": [
+      "DrgWhite",
+      "Drg",
+      "FirewallWhite",
+      "Firewall",
+      "InternetGatewayWhite",
+      "InternetGateway",
+      "LoadBalancerWhite",
+      "LoadBalancer",
+      "RouteTableWhite",
+      "RouteTable",
+      "SecurityListsWhite",
+      "SecurityLists",
+      "ServiceGatewayWhite",
+      "ServiceGateway",
+      "VcnWhite",
+      "Vcn"
+    ]
+  },
+  "aws": {
+    "media": [
+      "ElasticTranscoder",
+      "ElementalConductor",
+      "ElementalDelta",
+      "ElementalLive",
+      "ElementalMediaconnect",
+      "ElementalMediaconvert",
+      "ElementalMedialive",
+      "ElementalMediapackage",
+      "ElementalMediastore",
+      "ElementalMediatailor",
+      "ElementalServer",
+      "KinesisVideoStreams",
+      "MediaServices"
+    ],
+    "devtools": [
+      "CloudDevelopmentKit",
+      "Cloud9Resource",
+      "Cloud9",
+      "Cloudshell",
+      "Codeartifact",
+      "Codebuild",
+      "Codecommit",
+      "Codedeploy",
+      "Codepipeline",
+      "Codestar",
+      "CommandLineInterface",
+      "DeveloperTools",
+      "ToolsAndSdks",
+      "XRay"
+    ],
+    "game": [
+      "GameTech",
+      "Gamelift"
+    ],
+    "management": [
+      "AmazonDevopsGuru",
+      "AmazonManagedGrafana",
+      "AmazonManagedPrometheus",
+      "AmazonManagedWorkflowsApacheAirflow",
+      "AutoScaling",
+      "Chatbot",
+      "CloudformationChangeSet",
+      "CloudformationStack",
+      "CloudformationTemplate",
+      "Cloudformation",
+      "Cloudtrail",
+      "CloudwatchAlarm",
+      "CloudwatchEventEventBased",
+      "CloudwatchEventTimeBased",
+      "CloudwatchLogs",
+      "CloudwatchRule",
+      "Cloudwatch",
+      "Codeguru",
+      "CommandLineInterface",
+      "Config",
+      "ControlTower",
+      "LicenseManager",
+      "ManagedServices",
+      "ManagementAndGovernance",
+      "ManagementConsole",
+      "OpsworksApps",
+      "OpsworksDeployments",
+      "OpsworksInstances",
+      "OpsworksLayers",
+      "OpsworksMonitoring",
+      "OpsworksPermissions",
+      "OpsworksResources",
+      "OpsworksStack",
+      "Opsworks",
+      "OrganizationsAccount",
+      "OrganizationsOrganizationalUnit",
+      "Organizations",
+      "PersonalHealthDashboard",
+      "Proton",
+      "ServiceCatalog",
+      "SystemsManagerAppConfig",
+      "SystemsManagerAutomation",
+      "SystemsManagerDocuments",
+      "SystemsManagerInventory",
+      "SystemsManagerMaintenanceWindows",
+      "SystemsManagerOpscenter",
+      "SystemsManagerParameterStore",
+      "SystemsManagerPatchManager",
+      "SystemsManagerRunCommand",
+      "SystemsManagerStateManager",
+      "SystemsManager",
+      "TrustedAdvisorChecklistCost",
+      "TrustedAdvisorChecklistFaultTolerant",
+      "TrustedAdvisorChecklistPerformance",
+      "TrustedAdvisorChecklistSecurity",
+      "TrustedAdvisorChecklist",
+      "TrustedAdvisor",
+      "UserNotifications",
+      "WellArchitectedTool"
+    ],
+    "blockchain": [
+      "BlockchainResource",
+      "Blockchain",
+      "ManagedBlockchain",
+      "QuantumLedgerDatabaseQldb"
+    ],
+    "mobile": [
+      "Amplify",
+      "APIGatewayEndpoint",
+      "APIGateway",
+      "Appsync",
+      "DeviceFarm",
+      "Mobile",
+      "Pinpoint"
+    ],
+    "analytics": [
+      "AmazonOpensearchService",
+      "Analytics",
+      "Athena",
+      "CloudsearchSearchDocuments",
+      "Cloudsearch",
+      "DataLakeResource",
+      "DataPipeline",
+      "ElasticsearchService",
+      "EMRCluster",
+      "EMREngineMaprM3",
+      "EMREngineMaprM5",
+      "EMREngineMaprM7",
+      "EMREngine",
+      "EMRHdfsCluster",
+      "EMR",
+      "GlueCrawlers",
+      "GlueDataCatalog",
+      "Glue",
+      "KinesisDataAnalytics",
+      "KinesisDataFirehose",
+      "KinesisDataStreams",
+      "KinesisVideoStreams",
+      "Kinesis",
+      "LakeFormation",
+      "ManagedStreamingForKafka",
+      "Quicksight",
+      "RedshiftDenseComputeNode",
+      "RedshiftDenseStorageNode",
+      "Redshift"
+    ],
+    "ar": [
+      "ArVr",
+      "Sumerian"
+    ],
+    "general": [
+      "Client",
+      "Disk",
+      "Forums",
+      "General",
+      "GenericDatabase",
+      "GenericFirewall",
+      "GenericOfficeBuilding",
+      "GenericSamlToken",
+      "GenericSDK",
+      "InternetAlt1",
+      "InternetAlt2",
+      "InternetGateway",
+      "Marketplace",
+      "MobileClient",
+      "Multimedia",
+      "OfficeBuilding",
+      "SamlToken",
+      "SDK",
+      "SslPadlock",
+      "TapeStorage",
+      "Toolkit",
+      "TraditionalServer",
+      "User",
+      "Users"
+    ],
+    "database": [
+      "AuroraInstance",
+      "Aurora",
+      "DatabaseMigrationServiceDatabaseMigrationWorkflow",
+      "DatabaseMigrationService",
+      "Database",
+      "DocumentdbMongodbCompatibility",
+      "DynamodbAttribute",
+      "DynamodbAttributes",
+      "DynamodbDax",
+      "DynamodbGlobalSecondaryIndex",
+      "DynamodbItem",
+      "DynamodbItems",
+      "DynamodbStreams",
+      "DynamodbTable",
+      "Dynamodb",
+      "ElasticacheCacheNode",
+      "ElasticacheForMemcached",
+      "ElasticacheForRedis",
+      "Elasticache",
+      "KeyspacesManagedApacheCassandraService",
+      "Neptune",
+      "QuantumLedgerDatabaseQldb",
+      "RDSInstance",
+      "RDSMariadbInstance",
+      "RDSMysqlInstance",
+      "RDSOnVmware",
+      "RDSOracleInstance",
+      "RDSPostgresqlInstance",
+      "RDSSqlServerInstance",
+      "RDS",
+      "RedshiftDenseComputeNode",
+      "RedshiftDenseStorageNode",
+      "Redshift",
+      "Timestream"
+    ],
+    "storage": [
+      "Backup",
+      "CloudendureDisasterRecovery",
+      "EFSInfrequentaccessPrimaryBg",
+      "EFSStandardPrimaryBg",
+      "ElasticBlockStoreEBSSnapshot",
+      "ElasticBlockStoreEBSVolume",
+      "ElasticBlockStoreEBS",
+      "ElasticFileSystemEFSFileSystem",
+      "ElasticFileSystemEFS",
+      "FsxForLustre",
+      "FsxForWindowsFileServer",
+      "Fsx",
+      "MultipleVolumesResource",
+      "S3AccessPoints",
+      "S3GlacierArchive",
+      "S3GlacierVault",
+      "S3Glacier",
+      "S3ObjectLambdaAccessPoints",
+      "SimpleStorageServiceS3BucketWithObjects",
+      "SimpleStorageServiceS3Bucket",
+      "SimpleStorageServiceS3Object",
+      "SimpleStorageServiceS3",
+      "SnowFamilySnowballImportExport",
+      "SnowballEdge",
+      "Snowball",
+      "Snowmobile",
+      "StorageGatewayCachedVolume",
+      "StorageGatewayNonCachedVolume",
+      "StorageGatewayVirtualTapeLibrary",
+      "StorageGateway",
+      "Storage"
+    ],
+    "robotics": [
+      "RobomakerCloudExtensionRos",
+      "RobomakerDevelopmentEnvironment",
+      "RobomakerFleetManagement",
+      "RobomakerSimulator",
+      "Robomaker",
+      "Robotics"
+    ],
+    "migration": [
+      "ApplicationDiscoveryService",
+      "CloudendureMigration",
+      "DatabaseMigrationService",
+      "DatasyncAgent",
+      "Datasync",
+      "MigrationAndTransfer",
+      "MigrationHub",
+      "ServerMigrationService",
+      "SnowballEdge",
+      "Snowball",
+      "Snowmobile",
+      "TransferForSftp"
+    ],
+    "enduser": [
+      "Appstream20",
+      "DesktopAndAppStreaming",
+      "Workdocs",
+      "Worklink",
+      "Workspaces"
+    ],
+    "quantum": [
+      "Braket",
+      "QuantumTechnologies"
+    ],
+    "enablement": [
+      "CustomerEnablement",
+      "Iq",
+      "ManagedServices",
+      "ProfessionalServices",
+      "Support"
+    ],
+    "security": [
+      "AdConnector",
+      "Artifact",
+      "CertificateAuthority",
+      "CertificateManager",
+      "CloudDirectory",
+      "Cloudhsm",
+      "Cognito",
+      "Detective",
+      "DirectoryService",
+      "FirewallManager",
+      "Guardduty",
+      "IdentityAndAccessManagementIamAccessAnalyzer",
+      "IdentityAndAccessManagementIamAddOn",
+      "IdentityAndAccessManagementIamAWSStsAlternate",
+      "IdentityAndAccessManagementIamAWSSts",
+      "IdentityAndAccessManagementIamDataEncryptionKey",
+      "IdentityAndAccessManagementIamEncryptedData",
+      "IdentityAndAccessManagementIamLongTermSecurityCredential",
+      "IdentityAndAccessManagementIamMfaToken",
+      "IdentityAndAccessManagementIamPermissions",
+      "IdentityAndAccessManagementIamRole",
+      "IdentityAndAccessManagementIamTemporarySecurityCredential",
+      "IdentityAndAccessManagementIam",
+      "InspectorAgent",
+      "Inspector",
+      "KeyManagementService",
+      "Macie",
+      "ManagedMicrosoftAd",
+      "ResourceAccessManager",
+      "SecretsManager",
+      "SecurityHubFinding",
+      "SecurityHub",
+      "SecurityIdentityAndCompliance",
+      "SecurityLake",
+      "ShieldAdvanced",
+      "Shield",
+      "SimpleAd",
+      "SingleSignOn",
+      "WAFFilteringRule",
+      "WAF"
+    ],
+    "business": [
+      "AlexaForBusiness",
+      "BusinessApplications",
+      "Chime",
+      "Workmail"
+    ],
+    "compute": [
+      "AppRunner",
+      "ApplicationAutoScaling",
+      "Batch",
+      "ComputeOptimizer",
+      "Compute",
+      "EC2Ami",
+      "EC2AutoScaling",
+      "EC2ContainerRegistryImage",
+      "EC2ContainerRegistryRegistry",
+      "EC2ContainerRegistry",
+      "EC2ElasticIpAddress",
+      "EC2ImageBuilder",
+      "EC2Instance",
+      "EC2Instances",
+      "EC2Rescue",
+      "EC2SpotInstance",
+      "EC2",
+      "ElasticBeanstalkApplication",
+      "ElasticBeanstalkDeployment",
+      "ElasticBeanstalk",
+      "ElasticContainerServiceContainer",
+      "ElasticContainerServiceServiceConnect",
+      "ElasticContainerServiceService",
+      "ElasticContainerServiceTask",
+      "ElasticContainerService",
+      "ElasticKubernetesService",
+      "Fargate",
+      "LambdaFunction",
+      "Lambda",
+      "Lightsail",
+      "LocalZones",
+      "Outposts",
+      "ServerlessApplicationRepository",
+      "ThinkboxDeadline",
+      "ThinkboxDraft",
+      "ThinkboxFrost",
+      "ThinkboxKrakatoa",
+      "ThinkboxSequoia",
+      "ThinkboxStoke",
+      "ThinkboxXmesh",
+      "VmwareCloudOnAWS",
+      "Wavelength"
+    ],
+    "satellite": [
+      "GroundStation",
+      "Satellite"
+    ],
+    "engagement": [
+      "Connect",
+      "CustomerEngagement",
+      "Pinpoint",
+      "SimpleEmailServiceSesEmail",
+      "SimpleEmailServiceSes"
+    ],
+    "integration": [
+      "ApplicationIntegration",
+      "Appsync",
+      "ConsoleMobileApplication",
+      "EventResource",
+      "EventbridgeCustomEventBusResource",
+      "EventbridgeDefaultEventBusResource",
+      "EventbridgeEvent",
+      "EventbridgePipes",
+      "EventbridgeRule",
+      "EventbridgeSaasPartnerEventBusResource",
+      "EventbridgeScheduler",
+      "EventbridgeSchema",
+      "Eventbridge",
+      "ExpressWorkflows",
+      "MQ",
+      "SimpleNotificationServiceSnsEmailNotification",
+      "SimpleNotificationServiceSnsHttpNotification",
+      "SimpleNotificationServiceSnsTopic",
+      "SimpleNotificationServiceSns",
+      "SimpleQueueServiceSqsMessage",
+      "SimpleQueueServiceSqsQueue",
+      "SimpleQueueServiceSqs",
+      "StepFunctions"
+    ],
+    "cost": [
+      "Budgets",
+      "CostAndUsageReport",
+      "CostExplorer",
+      "CostManagement",
+      "ReservedInstanceReporting",
+      "SavingsPlans"
+    ],
+    "network": [
+      "APIGatewayEndpoint",
+      "APIGateway",
+      "AppMesh",
+      "ClientVpn",
+      "CloudMap",
+      "CloudFrontDownloadDistribution",
+      "CloudFrontEdgeLocation",
+      "CloudFrontStreamingDistribution",
+      "CloudFront",
+      "DirectConnect",
+      "ElasticLoadBalancing",
+      "ElbApplicationLoadBalancer",
+      "ElbClassicLoadBalancer",
+      "ElbNetworkLoadBalancer",
+      "Endpoint",
+      "GlobalAccelerator",
+      "InternetGateway",
+      "Nacl",
+      "NATGateway",
+      "NetworkFirewall",
+      "NetworkingAndContentDelivery",
+      "PrivateSubnet",
+      "Privatelink",
+      "PublicSubnet",
+      "Route53HostedZone",
+      "Route53",
+      "RouteTable",
+      "SiteToSiteVpn",
+      "TransitGatewayAttachment",
+      "TransitGateway",
+      "VPCCustomerGateway",
+      "VPCElasticNetworkAdapter",
+      "VPCElasticNetworkInterface",
+      "VPCFlowLogs",
+      "VPCPeering",
+      "VPCRouter",
+      "VPCTrafficMirroring",
+      "VPC",
+      "VpnConnection",
+      "VpnGateway"
+    ],
+    "ml": [
+      "ApacheMxnetOnAWS",
+      "AugmentedAi",
+      "Bedrock",
+      "Comprehend",
+      "DeepLearningAmis",
+      "DeepLearningContainers",
+      "Deepcomposer",
+      "Deeplens",
+      "Deepracer",
+      "ElasticInference",
+      "Forecast",
+      "FraudDetector",
+      "Kendra",
+      "Lex",
+      "MachineLearning",
+      "Personalize",
+      "Polly",
+      "Q",
+      "RekognitionImage",
+      "RekognitionVideo",
+      "Rekognition",
+      "SagemakerGroundTruth",
+      "SagemakerModel",
+      "SagemakerNotebook",
+      "SagemakerTrainingJob",
+      "Sagemaker",
+      "TensorflowOnAWS",
+      "Textract",
+      "Transcribe",
+      "Transform",
+      "Translate"
+    ],
+    "iot": [
+      "Freertos",
+      "InternetOfThings",
+      "Iot1Click",
+      "IotAction",
+      "IotActuator",
+      "IotAlexaEcho",
+      "IotAlexaEnabledDevice",
+      "IotAlexaSkill",
+      "IotAlexaVoiceService",
+      "IotAnalyticsChannel",
+      "IotAnalyticsDataSet",
+      "IotAnalyticsDataStore",
+      "IotAnalyticsNotebook",
+      "IotAnalyticsPipeline",
+      "IotAnalytics",
+      "IotBank",
+      "IotBicycle",
+      "IotButton",
+      "IotCamera",
+      "IotCar",
+      "IotCart",
+      "IotCertificate",
+      "IotCoffeePot",
+      "IotCore",
+      "IotDesiredState",
+      "IotDeviceDefender",
+      "IotDeviceGateway",
+      "IotDeviceManagement",
+      "IotDoorLock",
+      "IotEvents",
+      "IotFactory",
+      "IotFireTvStick",
+      "IotFireTv",
+      "IotGeneric",
+      "IotGreengrassConnector",
+      "IotGreengrass",
+      "IotHardwareBoard",
+      "IotHouse",
+      "IotHttp",
+      "IotHttp2",
+      "IotJobs",
+      "IotLambda",
+      "IotLightbulb",
+      "IotMedicalEmergency",
+      "IotMqtt",
+      "IotOverTheAirUpdate",
+      "IotPolicyEmergency",
+      "IotPolicy",
+      "IotReportedState",
+      "IotRule",
+      "IotSensor",
+      "IotServo",
+      "IotShadow",
+      "IotSimulator",
+      "IotSitewise",
+      "IotThermostat",
+      "IotThingsGraph",
+      "IotTopic",
+      "IotTravel",
+      "IotUtility",
+      "IotWindfarm"
+    ]
+  },
+  "firebase": {
+    "quality": [
+      "AppDistribution",
+      "CrashReporting",
+      "Crashlytics",
+      "PerformanceMonitoring",
+      "TestLab"
+    ],
+    "base": [
+      "Firebase"
+    ],
+    "develop": [
+      "Authentication",
+      "Firestore",
+      "Functions",
+      "Hosting",
+      "MLKit",
+      "RealtimeDatabase",
+      "Storage"
+    ],
+    "grow": [
+      "ABTesting",
+      "AppIndexing",
+      "DynamicLinks",
+      "InAppMessaging",
+      "Invites",
+      "Messaging",
+      "Predictions",
+      "RemoteConfig"
+    ],
+    "extentions": [
+      "Extensions"
+    ]
+  },
+  "gis": {
+    "server": [
+      "Actinia",
+      "Baremaps",
+      "Deegree",
+      "G3WSuite",
+      "Geohealthcheck",
+      "Geomapfish",
+      "Geomesa",
+      "Geonetwork",
+      "Geonode",
+      "Georchestra",
+      "Geoserver",
+      "Geowebcache",
+      "Kepler",
+      "Mapproxy",
+      "Mapserver",
+      "Mapstore",
+      "Mviewer",
+      "Pg_Tileserv",
+      "Pycsw",
+      "Pygeoapi",
+      "QGISServer",
+      "Zooproject"
+    ],
+    "java": [
+      "Geotools"
+    ],
+    "organization": [
+      "Osgeo"
+    ],
+    "desktop": [
+      "Maptunik",
+      "QGIS"
+    ],
+    "mobile": [
+      "Mergin",
+      "Qfield",
+      "Smash"
+    ],
+    "format": [
+      "Geopackage",
+      "Geoparquet"
+    ],
+    "javascript": [
+      "Cesium",
+      "Geostyler",
+      "Keplerjs",
+      "Leaflet",
+      "Maplibre",
+      "OlExt",
+      "Openlayers",
+      "Turfjs"
+    ],
+    "python": [
+      "Geopandas",
+      "Pysal"
+    ],
+    "database": [
+      "Postgis"
+    ],
+    "cli": [
+      "Gdal",
+      "Imposm",
+      "Lastools",
+      "Mapnik",
+      "Mdal",
+      "Pdal"
+    ],
+    "routing": [
+      "Graphhopper",
+      "Osrm",
+      "Pgrouting",
+      "Valhalla"
+    ],
+    "ogc": [
+      "OGC",
+      "WFS",
+      "WMS"
+    ],
+    "geocoding": [
+      "Addok",
+      "Gisgraphy",
+      "Nominatim",
+      "Pelias"
+    ],
+    "data": [
+      "BAN",
+      "Here",
+      "IGN",
+      "Openstreetmap",
+      "Overturemaps"
+    ],
+    "cplusplus": [
+      "Mapnik"
+    ]
+  },
+  "alibabacloud": {
+    "application": [
+      "ApiGateway",
+      "BeeBot",
+      "BlockchainAsAService",
+      "CloudCallCenter",
+      "CodePipeline",
+      "DirectMail",
+      "LogService",
+      "MessageNotificationService",
+      "NodeJsPerformancePlatform",
+      "OpenSearch",
+      "PerformanceTestingService",
+      "RdCloud",
+      "SmartConversationAnalysis",
+      "Yida"
+    ],
+    "analytics": [
+      "AnalyticDb",
+      "ClickHouse",
+      "DataLakeAnalytics",
+      "ElaticMapReduce",
+      "OpenSearch"
+    ],
+    "communication": [
+      "DirectMail",
+      "MobilePush"
+    ],
+    "database": [
+      "ApsaradbCassandra",
+      "ApsaradbHbase",
+      "ApsaradbMemcache",
+      "ApsaradbMongodb",
+      "ApsaradbOceanbase",
+      "ApsaradbPolardb",
+      "ApsaradbPostgresql",
+      "ApsaradbPpas",
+      "ApsaradbRedis",
+      "ApsaradbSqlserver",
+      "DataManagementService",
+      "DataTransmissionService",
+      "DatabaseBackupService",
+      "DisributeRelationalDatabaseService",
+      "GraphDatabaseService",
+      "HybriddbForMysql",
+      "RelationalDatabaseService"
+    ],
+    "storage": [
+      "CloudStorageGateway",
+      "FileStorageHdfs",
+      "FileStorageNas",
+      "HybridBackupRecovery",
+      "HybridCloudDisasterRecovery",
+      "Imm",
+      "ObjectStorageService",
+      "ObjectTableStore"
+    ],
+    "security": [
+      "AntiBotService",
+      "AntiDdosBasic",
+      "AntiDdosPro",
+      "AntifraudService",
+      "BastionHost",
+      "CloudFirewall",
+      "CloudSecurityScanner",
+      "ContentModeration",
+      "CrowdsourcedSecurityTesting",
+      "DataEncryptionService",
+      "DbAudit",
+      "GameShield",
+      "IdVerification",
+      "ManagedSecurityService",
+      "SecurityCenter",
+      "ServerGuard",
+      "SslCertificates",
+      "WebApplicationFirewall"
+    ],
+    "compute": [
+      "AutoScaling",
+      "BatchCompute",
+      "ContainerRegistry",
+      "ContainerService",
+      "ElasticComputeService",
+      "ElasticContainerInstance",
+      "ElasticHighPerformanceComputing",
+      "ElasticSearch",
+      "FunctionCompute",
+      "OperationOrchestrationService",
+      "ResourceOrchestrationService",
+      "ServerLoadBalancer",
+      "ServerlessAppEngine",
+      "SimpleApplicationServer",
+      "WebAppService"
+    ],
+    "web": [
+      "Dns",
+      "Domain"
+    ],
+    "network": [
+      "Cdn",
+      "CloudEnterpriseNetwork",
+      "ElasticIpAddress",
+      "ExpressConnect",
+      "NatGateway",
+      "ServerLoadBalancer",
+      "SmartAccessGateway",
+      "VirtualPrivateCloud",
+      "VpnGateway"
+    ],
+    "iot": [
+      "IotInternetDeviceId",
+      "IotLinkWan",
+      "IotMobileConnectionPackage",
+      "IotPlatform"
+    ]
+  },
+  "openstack": {
+    "billing": [
+      "Cloudkitty"
+    ],
+    "nfv": [
+      "Tacker"
+    ],
+    "baremetal": [
+      "Cyborg",
+      "Ironic"
+    ],
+    "packaging": [
+      "LOCI",
+      "Puppet",
+      "RPM"
+    ],
+    "apiproxies": [
+      "EC2API"
+    ],
+    "frontend": [
+      "Horizon"
+    ],
+    "optimization": [
+      "Congress",
+      "Rally",
+      "Vitrage",
+      "Watcher"
+    ],
+    "workloadprovisioning": [
+      "Magnum",
+      "Sahara",
+      "Trove"
+    ],
+    "storage": [
+      "Cinder",
+      "Manila",
+      "Swift"
+    ],
+    "applicationlifecycle": [
+      "Freezer",
+      "Masakari",
+      "Murano",
+      "Solum"
+    ],
+    "deployment": [
+      "Ansible",
+      "Charms",
+      "Chef",
+      "Helm",
+      "Kolla",
+      "Tripleo"
+    ],
+    "networking": [
+      "Designate",
+      "Neutron",
+      "Octavia"
+    ],
+    "sharedservices": [
+      "Barbican",
+      "Glance",
+      "Karbor",
+      "Keystone",
+      "Searchlight"
+    ],
+    "compute": [
+      "Nova",
+      "Qinling",
+      "Zun"
+    ],
+    "user": [
+      "Openstackclient"
+    ],
+    "monitoring": [
+      "Monasca",
+      "Telemetry"
+    ],
+    "containerservices": [
+      "Kuryr"
+    ],
+    "orchestration": [
+      "Blazar",
+      "Heat",
+      "Mistral",
+      "Senlin",
+      "Zaqar"
+    ],
+    "multiregion": [
+      "Tricircle"
+    ]
+  },
+  "elastic": {
+    "observability": [
+      "APM",
+      "Logs",
+      "Metrics",
+      "Observability",
+      "Uptime"
+    ],
+    "enterprisesearch": [
+      "AppSearch",
+      "Crawler",
+      "EnterpriseSearch",
+      "SiteSearch",
+      "WorkplaceSearch"
+    ],
+    "agent": [
+      "Agent",
+      "Endpoint",
+      "Fleet",
+      "Integrations"
+    ],
+    "elasticsearch": [
+      "Alerting",
+      "Beats",
+      "Elasticsearch",
+      "Kibana",
+      "LogstashPipeline",
+      "Logstash",
+      "MachineLearning",
+      "MapServices",
+      "Maps",
+      "Monitoring",
+      "SearchableSnapshots",
+      "SecuritySettings",
+      "SQL",
+      "Stack"
+    ],
+    "beats": [
+      "APM",
+      "Auditbeat",
+      "Filebeat",
+      "Functionbeat",
+      "Heartbeat",
+      "Metricbeat",
+      "Packetbeat",
+      "Winlogbeat"
+    ],
+    "security": [
+      "Endpoint",
+      "Security",
+      "SIEM",
+      "Xdr"
+    ],
+    "saas": [
+      "Cloud",
+      "Elastic"
+    ],
+    "orchestration": [
+      "ECE",
+      "ECK"
+    ]
+  },
+  "saas": {
+    "media": [
+      "Cloudinary"
+    ],
+    "identity": [
+      "Auth0",
+      "Okta"
+    ],
+    "crm": [
+      "Intercom",
+      "Zendesk"
+    ],
+    "filesharing": [
+      "Nextcloud"
+    ],
+    "recommendation": [
+      "Recombee"
+    ],
+    "alerting": [
+      "Newrelic",
+      "Opsgenie",
+      "Pagerduty",
+      "Pushover",
+      "Xmatters"
+    ],
+    "analytics": [
+      "Dataform",
+      "Snowflake",
+      "Stitch"
+    ],
+    "communication": [
+      "Twilio"
+    ],
+    "logging": [
+      "Datadog",
+      "Newrelic",
+      "Papertrail"
+    ],
+    "automation": [
+      "N8N"
+    ],
+    "security": [
+      "Crowdstrike",
+      "Sonarqube"
+    ],
+    "payment": [
+      "Adyen",
+      "AmazonPay",
+      "Paypal",
+      "Stripe"
+    ],
+    "social": [
+      "Facebook",
+      "Twitter"
+    ],
+    "chat": [
+      "Discord",
+      "Line",
+      "Mattermost",
+      "Messenger",
+      "RocketChat",
+      "Slack",
+      "Teams",
+      "Telegram"
+    ],
+    "cdn": [
+      "Akamai",
+      "Cloudflare",
+      "Fastly",
+      "Imperva"
+    ]
+  },
+  "c4": {},
+  "outscale": {
+    "storage": [
+      "SimpleStorageService",
+      "Storage"
+    ],
+    "security": [
+      "Firewall",
+      "IdentityAndAccessManagement"
+    ],
+    "compute": [
+      "Compute",
+      "DirectConnect"
+    ],
+    "network": [
+      "ClientVpn",
+      "InternetService",
+      "LoadBalancer",
+      "NatService",
+      "Net",
+      "SiteToSiteVpng"
+    ]
+  },
+  "onprem": {
+    "gitops": [
+      "Argocd",
+      "Flagger",
+      "Flux"
+    ],
+    "client": [
+      "Client",
+      "User",
+      "Users"
+    ],
+    "cd": [
+      "Spinnaker",
+      "TektonCli",
+      "Tekton"
+    ],
+    "messaging": [
+      "Centrifugo"
+    ],
+    "inmemory": [
+      "Aerospike",
+      "Hazelcast",
+      "Memcached",
+      "Redis"
+    ],
+    "dns": [
+      "Coredns",
+      "Powerdns"
+    ],
+    "identity": [
+      "Dex"
+    ],
+    "vcs": [
+      "Git",
+      "Gitea",
+      "Github",
+      "Gitlab",
+      "Svn"
+    ],
+    "tracing": [
+      "Jaeger",
+      "Tempo"
+    ],
+    "analytics": [
+      "Beam",
+      "Databricks",
+      "Dbt",
+      "Dremio",
+      "Flink",
+      "Hadoop",
+      "Hive",
+      "Metabase",
+      "Norikra",
+      "Powerbi",
+      "Presto",
+      "Singer",
+      "Spark",
+      "Storm",
+      "Superset",
+      "Tableau",
+      "Trino"
+    ],
+    "workflow": [
+      "Airflow",
+      "Digdag",
+      "Kubeflow",
+      "Nifi"
+    ],
+    "database": [
+      "Cassandra",
+      "Clickhouse",
+      "Cockroachdb",
+      "Couchbase",
+      "Couchdb",
+      "Dgraph",
+      "Druid",
+      "Duckdb",
+      "Hbase",
+      "Influxdb",
+      "Janusgraph",
+      "Mariadb",
+      "Mongodb",
+      "Mssql",
+      "Mysql",
+      "Neo4J",
+      "Oracle",
+      "Postgresql",
+      "Qdrant",
+      "Scylla"
+    ],
+    "ci": [
+      "Circleci",
+      "Concourseci",
+      "Droneci",
+      "GithubActions",
+      "Gitlabci",
+      "Jenkins",
+      "Teamcity",
+      "Travisci",
+      "Zuulci"
+    ],
+    "storage": [
+      "CephOsd",
+      "Ceph",
+      "Glusterfs",
+      "Portworx"
+    ],
+    "iac": [
+      "Ansible",
+      "Atlantis",
+      "Awx",
+      "Pulumi",
+      "Puppet",
+      "Terraform"
+    ],
+    "logging": [
+      "Fluentbit",
+      "Graylog",
+      "Loki",
+      "Rsyslog",
+      "SyslogNg"
+    ],
+    "etl": [
+      "Embulk"
+    ],
+    "aggregator": [
+      "Fluentd",
+      "Vector"
+    ],
+    "search": [
+      "Solr"
+    ],
+    "security": [
+      "Bitwarden",
+      "Trivy",
+      "Vault"
+    ],
+    "proxmox": [
+      "Pve"
+    ],
+    "compute": [
+      "Nomad",
+      "Server"
+    ],
+    "monitoring": [
+      "Cortex",
+      "Datadog",
+      "Dynatrace",
+      "Grafana",
+      "Humio",
+      "Mimir",
+      "Nagios",
+      "Newrelic",
+      "PrometheusOperator",
+      "Prometheus",
+      "Sentry",
+      "Splunk",
+      "Thanos",
+      "Zabbix"
+    ],
+    "certificates": [
+      "CertManager",
+      "LetsEncrypt"
+    ],
+    "registry": [
+      "Harbor",
+      "Jfrog"
+    ],
+    "queue": [
+      "Activemq",
+      "Celery",
+      "Emqx",
+      "Kafka",
+      "Nats",
+      "Rabbitmq",
+      "Zeromq"
+    ],
+    "groupware": [
+      "Nextcloud"
+    ],
+    "mlops": [
+      "Mlflow",
+      "Polyaxon"
+    ],
+    "auth": [
+      "Boundary",
+      "BuzzfeedSso",
+      "Oauth2Proxy"
+    ],
+    "network": [
+      "Ambassador",
+      "Apache",
+      "Bind9",
+      "Caddy",
+      "CiscoRouter",
+      "CiscoSwitchL2",
+      "CiscoSwitchL3",
+      "Consul",
+      "Envoy",
+      "Etcd",
+      "Glassfish",
+      "Gunicorn",
+      "Haproxy",
+      "Internet",
+      "Istio",
+      "Jbossas",
+      "Jetty",
+      "Kong",
+      "Linkerd",
+      "Mikrotik",
+      "Nginx",
+      "Ocelot",
+      "OpenServiceMesh",
+      "Opnsense",
+      "Pfsense",
+      "Pomerium",
+      "Powerdns",
+      "Tomcat",
+      "Traefik",
+      "Tyk",
+      "Vyos",
+      "Wildfly",
+      "Yarp",
+      "Zookeeper"
+    ],
+    "container": [
+      "Containerd",
+      "Crio",
+      "Docker",
+      "Firecracker",
+      "Gvisor",
+      "K3S",
+      "Lxc",
+      "Rkt"
+    ]
+  },
+  "digitalocean": {
+    "database": [
+      "DbaasPrimaryStandbyMore",
+      "DbaasPrimary",
+      "DbaasReadOnly",
+      "DbaasStandby"
+    ],
+    "storage": [
+      "Folder",
+      "Space",
+      "VolumeSnapshot",
+      "Volume"
+    ],
+    "compute": [
+      "Containers",
+      "Docker",
+      "DropletConnect",
+      "DropletSnapshot",
+      "Droplet",
+      "K8SCluster",
+      "K8SNodePool",
+      "K8SNode"
+    ],
+    "network": [
+      "Certificate",
+      "DomainRegistration",
+      "Domain",
+      "Firewall",
+      "FloatingIp",
+      "InternetGateway",
+      "LoadBalancer",
+      "ManagedVpn",
+      "Vpc"
+    ]
+  },
+  "generic": {
+    "place": [
+      "Datacenter"
+    ],
+    "virtualization": [
+      "Qemu",
+      "Virtualbox",
+      "Vmware",
+      "XEN"
+    ],
+    "device": [
+      "Mobile",
+      "Tablet"
+    ],
+    "database": [
+      "SQL"
+    ],
+    "storage": [
+      "Storage"
+    ],
+    "blank": [
+      "Blank"
+    ],
+    "compute": [
+      "Rack"
+    ],
+    "os": [
+      "Android",
+      "Centos",
+      "Debian",
+      "IOS",
+      "LinuxGeneral",
+      "Raspbian",
+      "RedHat",
+      "Suse",
+      "Ubuntu",
+      "Windows"
+    ],
+    "network": [
+      "Firewall",
+      "Router",
+      "Subnet",
+      "Switch",
+      "VPN"
+    ]
+  },
+  "ibm": {
+    "management": [
+      "AlertNotification",
+      "ApiManagement",
+      "CloudManagement",
+      "ClusterManagement",
+      "ContentManagement",
+      "DataServices",
+      "DeviceManagement",
+      "InformationGovernance",
+      "ItServiceManagement",
+      "Management",
+      "MonitoringMetrics",
+      "ProcessManagement",
+      "ProviderCloudPortalService",
+      "PushNotifications",
+      "ServiceManagementTools"
+    ],
+    "blockchain": [
+      "BlockchainDeveloper",
+      "Blockchain",
+      "CertificateAuthority",
+      "ClientApplication",
+      "Communication",
+      "Consensus",
+      "EventListener",
+      "Event",
+      "ExistingEnterpriseSystems",
+      "HyperledgerFabric",
+      "KeyManagement",
+      "Ledger",
+      "MembershipServicesProviderApi",
+      "Membership",
+      "MessageBus",
+      "Node",
+      "Services",
+      "SmartContract",
+      "TransactionManager",
+      "Wallet"
+    ],
+    "devops": [
+      "ArtifactManagement",
+      "BuildTest",
+      "CodeEditor",
+      "CollaborativeDevelopment",
+      "ConfigurationManagement",
+      "ContinuousDeploy",
+      "ContinuousTesting",
+      "Devops",
+      "Provision",
+      "ReleaseManagement"
+    ],
+    "infrastructure": [
+      "Channels",
+      "CloudMessaging",
+      "Dashboard",
+      "Diagnostics",
+      "EdgeServices",
+      "EnterpriseMessaging",
+      "EventFeed",
+      "InfrastructureServices",
+      "InterserviceCommunication",
+      "LoadBalancingRouting",
+      "MicroservicesMesh",
+      "MobileBackend",
+      "MobileProviderNetwork",
+      "MonitoringLogging",
+      "Monitoring",
+      "PeerServices",
+      "ServiceDiscoveryConfiguration",
+      "TransformationConnectivity"
+    ],
+    "applications": [
+      "ActionableInsight",
+      "Annotate",
+      "ApiDeveloperPortal",
+      "ApiPolyglotRuntimes",
+      "AppServer",
+      "ApplicationLogic",
+      "EnterpriseApplications",
+      "Index",
+      "IotApplication",
+      "Microservice",
+      "MobileApp",
+      "Ontology",
+      "OpenSourceTools",
+      "RuntimeServices",
+      "SaasApplications",
+      "ServiceBroker",
+      "SpeechToText",
+      "VisualRecognition",
+      "Visualization"
+    ],
+    "analytics": [
+      "Analytics",
+      "DataIntegration",
+      "DataRepositories",
+      "DeviceAnalytics",
+      "StreamingComputing"
+    ],
+    "general": [
+      "CloudMessaging",
+      "CloudServices",
+      "Cloudant",
+      "CognitiveServices",
+      "DataSecurity",
+      "Enterprise",
+      "GovernanceRiskCompliance",
+      "IBMContainers",
+      "IBMPublicCloud",
+      "IdentityAccessManagement",
+      "IdentityProvider",
+      "InfrastructureSecurity",
+      "Internet",
+      "IotCloud",
+      "MicroservicesApplication",
+      "MicroservicesMesh",
+      "MonitoringLogging",
+      "Monitoring",
+      "ObjectStorage",
+      "OfflineCapabilities",
+      "Openwhisk",
+      "PeerCloud",
+      "RetrieveRank",
+      "Scalable",
+      "ServiceDiscoveryConfiguration",
+      "TextToSpeech",
+      "TransformationConnectivity"
+    ],
+    "storage": [
+      "BlockStorage",
+      "ObjectStorage"
+    ],
+    "security": [
+      "ApiSecurity",
+      "BlockchainSecurityService",
+      "DataSecurity",
+      "Firewall",
+      "Gateway",
+      "GovernanceRiskCompliance",
+      "IdentityAccessManagement",
+      "IdentityProvider",
+      "InfrastructureSecurity",
+      "PhysicalSecurity",
+      "SecurityMonitoringIntelligence",
+      "SecurityServices",
+      "TrustendComputing",
+      "Vpn"
+    ],
+    "compute": [
+      "BareMetalServer",
+      "ImageService",
+      "Instance",
+      "Key",
+      "PowerInstance"
+    ],
+    "data": [
+      "Caches",
+      "Cloud",
+      "ConversationTrainedDeployed",
+      "DataServices",
+      "DataSources",
+      "DeviceIdentityService",
+      "DeviceRegistry",
+      "EnterpriseData",
+      "EnterpriseUserDirectory",
+      "FileRepository",
+      "GroundTruth",
+      "Model",
+      "TmsDataInterface"
+    ],
+    "user": [
+      "Browser",
+      "Device",
+      "IntegratedDigitalExperiences",
+      "PhysicalEntity",
+      "Sensor",
+      "User"
+    ],
+    "social": [
+      "Communities",
+      "FileSync",
+      "LiveCollaboration",
+      "Messaging",
+      "Networking"
+    ],
+    "network": [
+      "Bridge",
+      "DirectLink",
+      "Enterprise",
+      "Firewall",
+      "FloatingIp",
+      "Gateway",
+      "InternetServices",
+      "LoadBalancerListener",
+      "LoadBalancerPool",
+      "LoadBalancer",
+      "LoadBalancingRouting",
+      "PublicGateway",
+      "Region",
+      "Router",
+      "Rules",
+      "Subnet",
+      "TransitGateway",
+      "Vpc",
+      "VpnConnection",
+      "VpnGateway",
+      "VpnPolicy"
+    ]
+  },
+  "custom": {},
+  "k8s": {
+    "clusterconfig": [
+      "HPA",
+      "Limits",
+      "Quota"
+    ],
+    "podconfig": [
+      "CM",
+      "Secret"
+    ],
+    "infra": [
+      "ETCD",
+      "Master",
+      "Node"
+    ],
+    "controlplane": [
+      "API",
+      "CCM",
+      "CM",
+      "KProxy",
+      "Kubelet",
+      "Sched"
+    ],
+    "ecosystem": [
+      "ExternalDns",
+      "Helm",
+      "Krew",
+      "Kustomize"
+    ],
+    "storage": [
+      "PV",
+      "PVC",
+      "SC",
+      "Vol"
+    ],
+    "group": [
+      "NS"
+    ],
+    "chaos": [
+      "ChaosMesh",
+      "LitmusChaos"
+    ],
+    "others": [
+      "CRD",
+      "PSP"
+    ],
+    "compute": [
+      "Cronjob",
+      "Deploy",
+      "DS",
+      "Job",
+      "Pod",
+      "RS",
+      "STS"
+    ],
+    "rbac": [
+      "CRole",
+      "CRB",
+      "Group",
+      "RB",
+      "Role",
+      "SA",
+      "User"
+    ],
+    "network": [
+      "Ep",
+      "Ing",
+      "Netpol",
+      "SVC"
+    ]
+  },
+  "programming": {
+    "language": [
+      "Bash",
+      "C",
+      "Cpp",
+      "Csharp",
+      "Dart",
+      "Elixir",
+      "Erlang",
+      "Go",
+      "Java",
+      "Javascript",
+      "Kotlin",
+      "Latex",
+      "Matlab",
+      "Nodejs",
+      "Php",
+      "Python",
+      "R",
+      "Ruby",
+      "Rust",
+      "Scala",
+      "Sql",
+      "Swift",
+      "Typescript"
+    ],
+    "flowchart": [
+      "Action",
+      "Collate",
+      "Database",
+      "Decision",
+      "Delay",
+      "Display",
+      "Document",
+      "InputOutput",
+      "Inspection",
+      "InternalStorage",
+      "LoopLimit",
+      "ManualInput",
+      "ManualLoop",
+      "Merge",
+      "MultipleDocuments",
+      "OffPageConnectorLeft",
+      "OffPageConnectorRight",
+      "Or",
+      "PredefinedProcess",
+      "Preparation",
+      "Sort",
+      "StartEnd",
+      "StoredData",
+      "SummingJunction"
+    ],
+    "runtime": [
+      "Dapr"
+    ],
+    "framework": [
+      "Angular",
+      "Backbone",
+      "Camel",
+      "Django",
+      "Dotnet",
+      "Ember",
+      "Fastapi",
+      "Flask",
+      "Flutter",
+      "Graphql",
+      "Hibernate",
+      "Jhipster",
+      "Laravel",
+      "Micronaut",
+      "Nextjs",
+      "Phoenix",
+      "Quarkus",
+      "Rails",
+      "React",
+      "Spring",
+      "Sqlpage",
+      "Starlette",
+      "Svelte",
+      "Vercel",
+      "Vue"
+    ]
+  },
+  "azure": {
+    "identity": [
+      "AccessReview",
+      "ActiveDirectoryConnectHealth",
+      "ActiveDirectory",
+      "ADB2C",
+      "ADDomainServices",
+      "ADIdentityProtection",
+      "ADPrivilegedIdentityManagement",
+      "AppRegistrations",
+      "ConditionalAccess",
+      "EnterpriseApplications",
+      "Groups",
+      "IdentityGovernance",
+      "InformationProtection",
+      "ManagedIdentities",
+      "Users"
+    ],
+    "mobile": [
+      "AppServiceMobile",
+      "MobileEngagement",
+      "NotificationHubs"
+    ],
+    "devops": [
+      "ApplicationInsights",
+      "Artifacts",
+      "Boards",
+      "Devops",
+      "DevtestLabs",
+      "LabServices",
+      "Pipelines",
+      "Repos",
+      "TestPlans"
+    ],
+    "analytics": [
+      "AnalysisServices",
+      "DataExplorerClusters",
+      "DataFactories",
+      "DataLakeAnalytics",
+      "DataLakeStoreGen1",
+      "Databricks",
+      "EventHubClusters",
+      "EventHubs",
+      "Hdinsightclusters",
+      "LogAnalyticsWorkspaces",
+      "StreamAnalyticsJobs",
+      "SynapseAnalytics"
+    ],
+    "general": [
+      "Allresources",
+      "Azurehome",
+      "Developertools",
+      "Helpsupport",
+      "Information",
+      "Managementgroups",
+      "Marketplace",
+      "Quickstartcenter",
+      "Recent",
+      "Reservations",
+      "Resource",
+      "Resourcegroups",
+      "Servicehealth",
+      "Shareddashboard",
+      "Subscriptions",
+      "Support",
+      "Supportrequests",
+      "Tag",
+      "Tags",
+      "Templates",
+      "Twousericon",
+      "Userhealthicon",
+      "Usericon",
+      "Userprivacy",
+      "Userresource",
+      "Whatsnew"
+    ],
+    "database": [
+      "BlobStorage",
+      "CacheForRedis",
+      "CosmosDb",
+      "DataExplorerClusters",
+      "DataFactory",
+      "DataLake",
+      "DatabaseForMariadbServers",
+      "DatabaseForMysqlServers",
+      "DatabaseForPostgresqlServers",
+      "ElasticDatabasePools",
+      "ElasticJobAgents",
+      "InstancePools",
+      "ManagedDatabases",
+      "SQLDatabases",
+      "SQLDatawarehouse",
+      "SQLManagedInstances",
+      "SQLServerStretchDatabases",
+      "SQLServers",
+      "SQLVM",
+      "SQL",
+      "SsisLiftAndShiftIr",
+      "SynapseAnalytics",
+      "VirtualClusters",
+      "VirtualDatacenter"
+    ],
+    "storage": [
+      "ArchiveStorage",
+      "Azurefxtedgefiler",
+      "BlobStorage",
+      "DataBoxEdgeDataBoxGateway",
+      "DataBox",
+      "DataLakeStorage",
+      "GeneralStorage",
+      "NetappFiles",
+      "QueuesStorage",
+      "StorageAccountsClassic",
+      "StorageAccounts",
+      "StorageExplorer",
+      "StorageSyncServices",
+      "StorsimpleDataManagers",
+      "StorsimpleDeviceManagers",
+      "TableStorage"
+    ],
+    "migration": [
+      "DataBoxEdge",
+      "DataBox",
+      "DatabaseMigrationServices",
+      "MigrationProjects",
+      "RecoveryServicesVaults"
+    ],
+    "security": [
+      "ApplicationSecurityGroups",
+      "ConditionalAccess",
+      "Defender",
+      "ExtendedSecurityUpdates",
+      "KeyVaults",
+      "SecurityCenter",
+      "Sentinel"
+    ],
+    "compute": [
+      "AppServices",
+      "AutomanagedVM",
+      "AvailabilitySets",
+      "BatchAccounts",
+      "CitrixVirtualDesktopsEssentials",
+      "CloudServicesClassic",
+      "CloudServices",
+      "CloudsimpleVirtualMachines",
+      "ContainerApps",
+      "ContainerInstances",
+      "ContainerRegistries",
+      "DiskEncryptionSets",
+      "DiskSnapshots",
+      "Disks",
+      "FunctionApps",
+      "ImageDefinitions",
+      "ImageVersions",
+      "KubernetesServices",
+      "MeshApplications",
+      "OsImages",
+      "SAPHANAOnAzure",
+      "ServiceFabricClusters",
+      "SharedImageGalleries",
+      "SpringCloud",
+      "VMClassic",
+      "VMImages",
+      "VMLinux",
+      "VMScaleSet",
+      "VMWindows",
+      "VM",
+      "Workspaces"
+    ],
+    "monitor": [
+      "ChangeAnalysis",
+      "Logs",
+      "Metrics",
+      "Monitor"
+    ],
+    "web": [
+      "APIConnections",
+      "AppServiceCertificates",
+      "AppServiceDomains",
+      "AppServiceEnvironments",
+      "AppServicePlans",
+      "AppServices",
+      "MediaServices",
+      "NotificationHubNamespaces",
+      "Search",
+      "Signalr"
+    ],
+    "integration": [
+      "APIForFhir",
+      "APIManagement",
+      "AppConfiguration",
+      "DataCatalog",
+      "EventGridDomains",
+      "EventGridSubscriptions",
+      "EventGridTopics",
+      "IntegrationAccounts",
+      "IntegrationServiceEnvironments",
+      "LogicAppsCustomConnector",
+      "LogicApps",
+      "PartnerTopic",
+      "SendgridAccounts",
+      "ServiceBusRelays",
+      "ServiceBus",
+      "ServiceCatalogManagedApplicationDefinitions",
+      "SoftwareAsAService",
+      "StorsimpleDeviceManagers",
+      "SystemTopic"
+    ],
+    "network": [
+      "ApplicationGateway",
+      "ApplicationSecurityGroups",
+      "CDNProfiles",
+      "Connections",
+      "DDOSProtectionPlans",
+      "DNSPrivateZones",
+      "DNSZones",
+      "ExpressrouteCircuits",
+      "Firewall",
+      "FrontDoors",
+      "LoadBalancers",
+      "LocalNetworkGateways",
+      "NetworkInterfaces",
+      "NetworkSecurityGroupsClassic",
+      "NetworkWatcher",
+      "OnPremisesDataGateways",
+      "PrivateEndpoint",
+      "PublicIpAddresses",
+      "ReservedIpAddressesClassic",
+      "RouteFilters",
+      "RouteTables",
+      "ServiceEndpointPolicies",
+      "Subnets",
+      "TrafficManagerProfiles",
+      "VirtualNetworkClassic",
+      "VirtualNetworkGateways",
+      "VirtualNetworks",
+      "VirtualWans"
+    ],
+    "ml": [
+      "AzureOpenAI",
+      "AzureSpeechService",
+      "BatchAI",
+      "BotServices",
+      "CognitiveServices",
+      "GenomicsAccounts",
+      "MachineLearningServiceWorkspaces",
+      "MachineLearningStudioWebServicePlans",
+      "MachineLearningStudioWebServices",
+      "MachineLearningStudioWorkspaces"
+    ],
+    "iot": [
+      "DeviceProvisioningServices",
+      "DigitalTwins",
+      "IotCentralApplications",
+      "IotHubSecurity",
+      "IotHub",
+      "Maps",
+      "Sphere",
+      "TimeSeriesInsightsEnvironments",
+      "TimeSeriesInsightsEventsSources",
+      "Windows10IotCoreServices"
+    ]
+  }
+}
