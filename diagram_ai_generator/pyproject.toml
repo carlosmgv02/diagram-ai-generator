@@ -1,0 +1,113 @@
+[build-system]
+requires = ["setuptools>=61.0.0,<70.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "diagram-ai-generator"
+version = "1.0.1"
+description = "Professional AI-powered architecture diagram generator with MCP server support"
+readme = "README.md"
+authors = [
+    { name = "Diagram AI Generator Team", email = "carlos@caricalia.com" },
+]
+maintainers = [
+    { name = "Diagram AI Generator Team", email = "contact@diagram-ai.com" },
+]
+keywords = [
+    "diagrams",
+    "architecture",
+    "ai",
+    "mcp",
+    "visualization",
+    "aws",
+    "azure",
+    "gcp",
+    "kubernetes",
+    "multi-cloud",
+    "claude",
+    "infrastructure",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Environment :: Console",
+    "Natural Language :: English",
+]
+requires-python = ">=3.9"
+dependencies = ["diagrams>=0.23.0", "Pillow>=10.0.0", "mcp>=0.1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov", "black", "ruff", "mypy", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/diagram-ai/diagram-ai-generator"
+Repository = "https://github.com/diagram-ai/diagram-ai-generator"
+Documentation = "https://github.com/diagram-ai/diagram-ai-generator#readme"
+Issues = "https://github.com/diagram-ai/diagram-ai-generator/issues"
+Changelog = "https://github.com/diagram-ai/diagram-ai-generator/releases"
+"Bug Reports" = "https://github.com/diagram-ai/diagram-ai-generator/issues"
+"Source Code" = "https://github.com/diagram-ai/diagram-ai-generator"
+
+[project.scripts]
+diagram-ai-mcp = "src.application.mcp.server_modular:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.setuptools.package-data]
+"src.infrastructure.external" = ["*.json"]
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.ruff]
+target-version = "py39"
+line-length = 88
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501", # line too long, handled by black
+    "B008", # do not perform function calls in argument defaults
+    "C901", # too complex
+]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true

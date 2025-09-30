@@ -1,0 +1,24 @@
+# Include the README and license files
+include README.md
+include LICENSE
+
+# Include all JSON data files
+recursive-include src *.json
+
+# Include scripts
+recursive-include scripts *.py *.sh
+
+# Include Docker configuration
+recursive-include docker *
+
+# Include documentation
+recursive-include docs *.md
+
+# Exclude development and build files
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *~
+global-exclude __pycache__
+global-exclude .git*
+global-exclude *.so
+global-exclude .DS_Store
