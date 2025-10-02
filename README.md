@@ -325,6 +325,38 @@ sudo apt-get install graphviz
 - Use absolute paths in the configuration
 - Check Claude Desktop logs for errors
 
+## 🔧 Development
+
+### Contributing
+
+1. Fork the repository
+2. Create a feature branch from `develop`
+3. Make your changes
+4. Open a PR to `develop`
+
+### Release Process
+
+**Automated with GitHub Actions:**
+
+1. **PR to master**: Triggers checks
+   - Tests and build validation
+   - Analyzes changes (code vs docs only)
+   - Comments on PR if release will be created
+
+2. **Merge to master**: Auto-deploys if version changed
+   - Builds package
+   - Publishes to PyPI
+   - Creates GitHub release
+   - Updates CHANGELOG
+
+### Versioning
+
+Follow [Conventional Commits](https://www.conventionalcommits.org/):
+- `feat:` - New feature (bumps MINOR version)
+- `fix:` - Bug fix (bumps PATCH version)  
+- `BREAKING CHANGE:` - Breaking change (bumps MAJOR version)
+- `docs:` - Documentation only (no release)
+
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) file for details.
@@ -332,6 +364,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## 🆘 Support
 
 - 🐛 **Issues**: [GitHub Issues](https://github.com/carlosmgv02/diagram-ai-generator/issues)
+- 📝 **Changelog**: [CHANGELOG.md](CHANGELOG.md)
 
 ---
 

@@ -28,8 +28,8 @@ class FilesystemDiagramStorage(DiagramStoragePort):
             if env_path:
                 self._output_dir = Path(env_path)
             else:
-                # Default to generated_diagrams in current directory
-                self._output_dir = Path.cwd() / "generated_diagrams"
+                # Default to generated_diagrams in user's home directory
+                self._output_dir = Path.home() / "generated_diagrams"
         
         self.ensure_directory_exists()
     
