@@ -27,7 +27,7 @@ Here's a real diagram generated with a simple text prompt:
 
 **Prompt**: *"aplicación web en AWS con ALB, EC2 en múltiples zonas de disponibilidad, RDS con réplica de lectura, ElastiCache para caché y CloudFront para CDN y muchas mas cosas con layout horizontal para que se vea completo y bien"*
 
-![AWS High Availability Architecture](assets/example_aws_architecture.png)
+![AWS High Availability Architecture](https://github.com/carlosmgv02/diagram-ai-generator/blob/master/assets/example_aws_architecture.png)
 
 **Generated in seconds** with professional AWS icons, proper layout, and accurate cloud architecture patterns! 🎉
 
