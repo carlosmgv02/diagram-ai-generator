@@ -17,6 +17,25 @@ Professional AI-powered architecture diagram generator with **multi-cloud suppor
 - 📦 **PyPI Package**: Install easily with pip
 - 🏗️ **Modular Architecture**: Clean, scalable, and maintainable codebase
 
+## 📸 Example Output
+
+Here's a real diagram generated with a simple text prompt:
+
+**Prompt**: *"aplicación web en AWS con ALB, EC2 en múltiples zonas de disponibilidad, RDS con réplica de lectura, ElastiCache para caché y CloudFront para CDN y muchas mas cosas con layout horizontal para que se vea completo y bien"*
+
+![AWS High Availability Architecture](assets/example_aws_architecture.png)
+
+**Generated in seconds** with professional AWS icons, proper layout, and accurate cloud architecture patterns! 🎉
+
+### ⚡ How It Works
+
+Simply describe your architecture in plain text:
+- ✅ "Create a microservices architecture with load balancer, containers, and Redis cache"
+- ✅ "Design a data pipeline with S3, Lambda, and Kinesis"
+- ✅ "Build a multi-region setup with CloudFront, ALB, and RDS"
+
+The AI understands your requirements and generates **production-ready** diagrams with the correct cloud provider icons and relationships.
+
 ## 🚀 Quick Start
 
 ### Option 1: Install from PyPI (Recommended)
@@ -82,6 +101,35 @@ The MCP server provides 5 professional tools for creating diagrams:
    ↓
 4. create_diagram_from_json(spec)
 ```
+
+### 💡 Real-World Examples
+
+#### Example 1: AWS Serverless E-commerce
+
+**Simple prompt**: "Create a serverless e-commerce backend on AWS with API Gateway, Lambda functions, DynamoDB, and S3 for product images"
+
+**What you get**:
+- Professional AWS architecture diagram
+- Correct service icons and relationships
+- Production-ready layout
+
+#### Example 2: Multi-Cloud Disaster Recovery
+
+**Simple prompt**: "Multi-cloud setup with primary services in AWS and failover in Azure"
+
+**What you get**:
+- Clear separation between cloud providers
+- Cross-cloud connections
+- Both AWS and Azure specific icons
+
+#### Example 3: Kubernetes Microservices
+
+**Simple prompt**: "Kubernetes cluster with microservices, ingress controller, and persistent storage"
+
+**What you get**:
+- Kubernetes-specific resources
+- Proper namespace organization
+- Service mesh visualization
 
 ### Example: Single-Cloud Diagram
 

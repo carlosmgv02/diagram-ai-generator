@@ -162,6 +162,7 @@ cython_debug/
 # Project specific
 generated_diagrams/
 *.png
+!assets/*.png
 *.svg
 *.pdf
 *.dot
