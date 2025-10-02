@@ -86,13 +86,34 @@ jobs:
           twine check dist/*
           echo "✅ Package validation passed"
 
+      - name: Check if version exists on PyPI
+        id: check_pypi
+        run: |
+          VERSION="${{ needs.check-version.outputs.new_version }}"
+          
+          # Check if version exists on PyPI
+          if pip index versions diagram-ai-generator | grep -q "Available versions: .*$VERSION"; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "⚠️  Version $VERSION already exists on PyPI"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "✅ Version $VERSION is new"
+          fi
+
       - name: Publish to PyPI
+        if: steps.check_pypi.outputs.exists == 'false'
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
           python -m twine upload dist/*
           echo "✅ Published to PyPI"
+      
+      - name: Skip publishing
+        if: steps.check_pypi.outputs.exists == 'true'
+        run: |
+          echo "ℹ️  Version ${{ needs.check-version.outputs.new_version }} already exists on PyPI - skipping upload"
+          echo "This is normal if the version was published manually"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
