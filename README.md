@@ -1,8 +1,12 @@
 # Diagram AI Generator 🚀
 
-[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
+[![PyPI version](https://img.shields.io/pypi/v/diagram-ai-generator.svg)](https://pypi.org/project/diagram-ai-generator/)
+[![Python](https://img.shields.io/pypi/pyversions/diagram-ai-generator.svg)](https://pypi.org/project/diagram-ai-generator/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](docker/)
+[![Downloads](https://img.shields.io/pypi/dm/diagram-ai-generator.svg)](https://pypi.org/project/diagram-ai-generator/)
+
+[![PR Checks](https://github.com/carlosmgv02/diagram-ai-generator/actions/workflows/pr-check.yml/badge.svg)](https://github.com/carlosmgv02/diagram-ai-generator/actions/workflows/pr-check.yml)
+[![Release](https://github.com/carlosmgv02/diagram-ai-generator/actions/workflows/release.yml/badge.svg)](https://github.com/carlosmgv02/diagram-ai-generator/actions/workflows/release.yml)
 [![MCP](https://img.shields.io/badge/MCP-Compatible-purple.svg)](https://modelcontextprotocol.io)
 
 Professional AI-powered architecture diagram generator with **multi-cloud support** and **MCP (Model Context Protocol) server** integration. Generate beautiful, accurate diagrams with provider-specific icons for AWS, Azure, GCP, Kubernetes, and more.
@@ -306,9 +310,13 @@ When you use incorrect node names, the system suggests alternatives:
 ### Common Issues
 
 **1. Module not found error**
-Make sure you installed in the correct Python:
+Make sure you have Python 3.10+ and installed in the correct Python:
 ```bash
-/usr/local/bin/python3 -m pip install --index-url https://pypi.org/simple diagram-ai-generator
+# Check Python version
+python3 --version  # Should be 3.10 or higher
+
+# Install
+/usr/local/bin/python3 -m pip install diagram-ai-generator
 ```
 
 **2. Graphviz not found**
