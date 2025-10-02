@@ -1,45 +1,47 @@
 from src.application.mcp.tools.base_tool import BaseTool, register_tool
+from src.application.mcp.tools.tool_constants import LANGUAGE_INSTRUCTION
 
 class ProvidersTool(BaseTool):
     @register_tool
-    def step1_list_providers(self) -> str:
-        """
-        🔥 PASO 1 OBLIGATORIO: Lista todos los proveedores disponibles automáticamente.
+    def list_providers(self) -> str:
+        f"""
+        List all available cloud providers and infrastructure platforms.
         
-        DEBES USAR ESTE PASO PRIMERO antes de cualquier diagrama.
+        {LANGUAGE_INSTRUCTION}
+        
+        This is STEP 1 of the recommended workflow for creating diagrams with correct icons.
         
         Returns:
-            Lista numerada de todos los proveedores disponibles
+            Numbered list of all available providers
         """
         providers_mapping = {
-            "onprem": "OnPrem - Servicios on-premise",
             "aws": "AWS - Amazon Web Services", 
             "azure": "Azure - Microsoft Azure",
             "gcp": "GCP - Google Cloud Platform",
-            "ibm": "IBM - IBM Cloud",
             "k8s": "K8S - Kubernetes",
+            "onprem": "OnPrem - On-premise services",
+            "ibm": "IBM - IBM Cloud",
             "alibabacloud": "AlibabaCloud - Alibaba Cloud",
             "oci": "OCI - Oracle Cloud Infrastructure", 
-            "openstack": "OpenStack - OpenStack",
+            "openstack": "OpenStack",
             "firebase": "Firebase - Google Firebase",
-            "digitalocean": "DigitalOcean - DigitalOcean",
+            "digitalocean": "DigitalOcean",
             "elastic": "Elastic - Elastic Stack",
-            "outscale": "Outscale - Outscale Cloud",
-            "generic": "Generic - Componentes genéricos",
-            "programming": "Programming - Lenguajes de programación",
+            "outscale": "Outscale Cloud",
+            "generic": "Generic - Generic components",
+            "programming": "Programming - Programming languages",
             "saas": "Saas - Software as a Service",
-            "c4": "C4 - Diagramas C4",
-            "custom": "Custom - Componentes personalizados",
-            "gis": "GIS - Sistemas de información geográfica"
+            "c4": "C4 - C4 Model diagrams",
+            "custom": "Custom - Custom components"
         }
         
-        response = "🔥 **PASO 1: PROVEEDORES DISPONIBLES**\n\n"
+        response = "📋 AVAILABLE PROVIDERS\n\n"
         
         for i, (key, description) in enumerate(providers_mapping.items(), 1):
             response += f"{i}. **{key}** - {description}\n"
         
-        response += f"\n✅ **Total:** {len(providers_mapping)} proveedores"
-        response += f"\n\n🔥 **SIGUIENTE PASO OBLIGATORIO:** step2_get_categories(\"nombre_proveedor\")"
-        response += f"\n💡 **Ejemplo:** step2_get_categories(\"aws\") para ver categorías de AWS"
+        response += f"\n✅ Total: {len(providers_mapping)} providers"
+        response += f"\n\n➡️  NEXT STEP: get_provider_categories(\"provider_name\")"
+        response += f"\n💡 Example: get_provider_categories(\"aws\") to see AWS categories"
         
         return response

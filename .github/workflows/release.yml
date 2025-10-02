@@ -151,23 +151,78 @@ jobs:
         run: |
           VERSION="${{ needs.check-version.outputs.new_version }}"
           DATE=$(date +%Y-%m-%d)
+          REPO="${{ github.repository }}"
           
-          # Create changelog entry
+          # Get the previous version tag
+          PREV_TAG=$(git describe --tags --abbrev=0 HEAD~1 2>/dev/null || echo "")
+          
+          # Get commits since last tag
+          if [ -z "$PREV_TAG" ]; then
+            COMMITS=$(git log --pretty=format:"%h|%s|%an" --no-merges)
+          else
+            COMMITS=$(git log ${PREV_TAG}..HEAD --pretty=format:"%h|%s|%an" --no-merges)
+          fi
+          
+          # Initialize categories
+          ADDED=""
+          CHANGED=""
+          FIXED=""
+          REMOVED=""
+          BREAKING=""
+          OTHER=""
+          
+          # Categorize commits
+          while IFS='|' read -r hash message author; do
+            # Create commit link
+            COMMIT_LINK="[\`${hash}\`](https://github.com/${REPO}/commit/${hash})"
+            
+            # Extract PR number if exists
+            PR_NUM=$(echo "$message" | grep -oE '\(#[0-9]+\)' | head -1)
+            if [ -n "$PR_NUM" ]; then
+              PR_LINK=" ${PR_NUM/\(#/([#}${PR_NUM/\)/](https://github.com/${REPO}/pull/${PR_NUM//[()#]/})}"
+              message=$(echo "$message" | sed "s/${PR_NUM}//g")
+            else
+              PR_LINK=""
+            fi
+            
+            # Clean message
+            message=$(echo "$message" | sed 's/^feat: //i; s/^fix: //i; s/^chore: //i; s/^docs: //i; s/^refactor: //i; s/^style: //i; s/^test: //i; s/^perf: //i')
+            
+            # Categorize
+            if echo "$message" | grep -qiE '^BREAKING CHANGE:'; then
+              BREAKING="${BREAKING}- ${message} ${COMMIT_LINK}${PR_LINK}\n"
+            elif echo "$hash" | xargs git log -1 --format=%B | grep -qiE '^feat'; then
+              ADDED="${ADDED}- ${message} ${COMMIT_LINK}${PR_LINK}\n"
+            elif echo "$hash" | xargs git log -1 --format=%B | grep -qiE '^fix'; then
+              FIXED="${FIXED}- ${message} ${COMMIT_LINK}${PR_LINK}\n"
+            elif echo "$hash" | xargs git log -1 --format=%B | grep -qiE '^(remove|delete)'; then
+              REMOVED="${REMOVED}- ${message} ${COMMIT_LINK}${PR_LINK}\n"
+            elif echo "$hash" | xargs git log -1 --format=%B | grep -qiE '^(chore|refactor|perf|style)'; then
+              CHANGED="${CHANGED}- ${message} ${COMMIT_LINK}${PR_LINK}\n"
+            else
+              OTHER="${OTHER}- ${message} ${COMMIT_LINK}${PR_LINK}\n"
+            fi
+          done <<< "$COMMITS"
+          
+          # Build changelog entry
           cat > changelog_entry.md << EOF
           ## [$VERSION] - $DATE
           
-          ### Added
-          - See GitHub release notes for details
-          
-          ### Changed
-          - See commit history for all changes
-          
           EOF
+          
+          [ -n "$BREAKING" ] && echo -e "### ⚠️ BREAKING CHANGES\n${BREAKING}" >> changelog_entry.md
+          [ -n "$ADDED" ] && echo -e "### ✨ Added\n${ADDED}" >> changelog_entry.md
+          [ -n "$CHANGED" ] && echo -e "### 🔧 Changed\n${CHANGED}" >> changelog_entry.md
+          [ -n "$FIXED" ] && echo -e "### 🐛 Fixed\n${FIXED}" >> changelog_entry.md
+          [ -n "$REMOVED" ] && echo -e "### 🗑️ Removed\n${REMOVED}" >> changelog_entry.md
+          [ -n "$OTHER" ] && echo -e "### 📝 Other\n${OTHER}" >> changelog_entry.md
           
           # Prepend to CHANGELOG.md (after header)
           if [ -f CHANGELOG.md ]; then
+            # Find where to insert (after "All notable changes..." section)
             head -n 4 CHANGELOG.md > temp_changelog.md
             cat changelog_entry.md >> temp_changelog.md
+            echo "" >> temp_changelog.md
             tail -n +5 CHANGELOG.md >> temp_changelog.md
             mv temp_changelog.md CHANGELOG.md
           fi
