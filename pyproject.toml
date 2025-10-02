@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "diagram-ai-generator"
-version = "1.0.2"
+version = "1.0.4"
 description = "Professional AI-powered architecture diagram generator with MCP server support"
 readme = "README.md"
 authors = [

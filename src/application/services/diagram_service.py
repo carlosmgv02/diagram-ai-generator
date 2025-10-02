@@ -13,14 +13,25 @@ from diagrams import Diagram, Cluster, Edge
 from diagrams.generic import Generic
 import importlib
 
+from src.domain.ports.diagram_storage_port import DiagramStoragePort
+from src.infrastructure.adapters.filesystem_storage import FilesystemDiagramStorage
+
 
 class DiagramService:
     """Servicio simple para generar diagramas"""
     
-    def __init__(self):
+    def __init__(self, storage: Optional[DiagramStoragePort] = None):
+        """
+        Initialize the diagram service
+        
+        Args:
+            storage: Optional storage adapter. If None, uses FilesystemDiagramStorage.
+        """
         self.project_root = Path(__file__).parent.parent.parent.parent
-        self.images_dir = self.project_root / "generated_diagrams"
-        self.images_dir.mkdir(exist_ok=True)
+        
+        # Dependency injection: use provided storage or create default
+        self.storage = storage if storage is not None else FilesystemDiagramStorage()
+        self.images_dir = self.storage.get_output_directory()
         
         # Cargar estructura de proveedores desde JSON
         self.providers_data = self._load_providers_data()

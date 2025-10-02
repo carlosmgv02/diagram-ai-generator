@@ -1,0 +1,144 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  analyze-changes:
+    name: Analyze Changes
+    runs-on: ubuntu-latest
+    outputs:
+      needs_release: ${{ steps.check.outputs.needs_release }}
+      change_type: ${{ steps.check.outputs.change_type }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check what changed
+        id: check
+        run: |
+          # Get changed files
+          CHANGED_FILES=$(git diff --name-only origin/master...HEAD)
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
+          
+          # Check if only docs/README changed
+          if echo "$CHANGED_FILES" | grep -qvE '^(README\.md|docs/|\.github/|CHANGELOG\.md|LICENSE)'; then
+            echo "needs_release=true" >> $GITHUB_OUTPUT
+            echo "change_type=code" >> $GITHUB_OUTPUT
+            echo "📦 Code changes detected - Release will be created"
+          else
+            echo "needs_release=false" >> $GITHUB_OUTPUT
+            echo "change_type=docs" >> $GITHUB_OUTPUT
+            echo "📝 Only documentation changes - No release needed"
+          fi
+
+      - name: Comment PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const needsRelease = '${{ steps.check.outputs.needs_release }}' === 'true';
+            const changeType = '${{ steps.check.outputs.change_type }}';
+            
+            let message = '## 🔍 PR Analysis\n\n';
+            
+            if (needsRelease) {
+              message += '✅ **Release will be created** when merged to master\n\n';
+              message += '📦 Code changes detected that require a new version.\n';
+            } else {
+              message += '📝 **No release needed** - Documentation only\n\n';
+              message += 'Only documentation files were changed.\n';
+            }
+            
+            message += '\n---\n';
+            message += 'Make sure your commit follows [Conventional Commits](https://www.conventionalcommits.org/):\n';
+            message += '- `feat:` - New feature (minor version bump)\n';
+            message += '- `fix:` - Bug fix (patch version bump)\n';
+            message += '- `BREAKING CHANGE:` - Breaking change (major version bump)\n';
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
+            });
+
+  test-and-build:
+    name: Test & Build
+    runs-on: ubuntu-latest
+    needs: analyze-changes
+    if: needs.analyze-changes.outputs.needs_release == 'true'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build twine
+
+      - name: Verify project structure
+        run: |
+          echo "Checking required files..."
+          test -f pyproject.toml || (echo "❌ pyproject.toml not found" && exit 1)
+          test -f README.md || (echo "❌ README.md not found" && exit 1)
+          test -f LICENSE || (echo "❌ LICENSE not found" && exit 1)
+          test -d src || (echo "❌ src directory not found" && exit 1)
+          echo "✅ All required files present"
+
+      - name: Build package
+        run: |
+          python -m build
+          echo "✅ Package built successfully"
+
+      - name: Check package
+        run: |
+          twine check dist/*
+          echo "✅ Package validation passed"
+
+      - name: Test import
+        run: |
+          pip install dist/*.whl
+          python -c "from src.application.services.diagram_service import DiagramService; print('✅ Import successful')"
+          python -c "from src.infrastructure.adapters.filesystem_storage import FilesystemDiagramStorage; print('✅ Storage adapter import successful')"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-packages
+          path: dist/
+          retention-days: 7
+
+  lint-commits:
+    name: Lint Commit Messages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check commit messages
+        run: |
+          echo "Checking commit message format..."
+          git log --format=%s origin/master..HEAD | while read msg; do
+            if echo "$msg" | grep -qE '^(feat|fix|docs|style|refactor|test|chore|perf)(\(.+\))?:|^BREAKING CHANGE:|^Merge'; then
+              echo "✅ $msg"
+            else
+              echo "⚠️  Non-conventional commit: $msg"
+              echo "   Consider using: feat|fix|docs|style|refactor|test|chore|perf"
+            fi
+          done
+
