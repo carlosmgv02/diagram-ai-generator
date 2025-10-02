@@ -1,6 +1,0 @@
-# Core dependencies
-diagrams>=0.23.0
-Pillow>=10.0.0
-
-# MCP support
-mcp>=0.1.0
