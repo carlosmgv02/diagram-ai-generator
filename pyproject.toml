@@ -51,13 +51,13 @@ dependencies = ["diagrams>=0.23.0", "Pillow>=10.0.0", "mcp>=0.1.0"]
 dev = ["pytest>=7.0", "pytest-cov", "black", "ruff", "mypy", "build", "twine"]
 
 [project.urls]
-Homepage = "https://github.com/diagram-ai/diagram-ai-generator"
-Repository = "https://github.com/diagram-ai/diagram-ai-generator"
-Documentation = "https://github.com/diagram-ai/diagram-ai-generator#readme"
-Issues = "https://github.com/diagram-ai/diagram-ai-generator/issues"
-Changelog = "https://github.com/diagram-ai/diagram-ai-generator/releases"
-"Bug Reports" = "https://github.com/diagram-ai/diagram-ai-generator/issues"
-"Source Code" = "https://github.com/diagram-ai/diagram-ai-generator"
+Homepage = "https://github.com/carlosmgv02/diagram-ai-generator"
+Repository = "https://github.com/carlosmgv02/diagram-ai-generator"
+Documentation = "https://github.com/carlosmgv02/diagram-ai-generator#readme"
+Issues = "https://github.com/carlosmgv02/diagram-ai-generator/issues"
+Changelog = "https://github.com/carlosmgv02/diagram-ai-generator/releases"
+"Bug Reports" = "https://github.com/carlosmgv02/diagram-ai-generator/issues"
+"Source Code" = "https://github.com/carlosmgv02/diagram-ai-generator"
 
 [project.scripts]
 diagram-ai-mcp = "src.application.mcp.server_modular:main"

@@ -59,7 +59,7 @@ print('✅ Diagram AI Generator ready!')
 
 ```bash
 # Clone the repository
-git clone https://github.com/diagram-ai/diagram-ai-generator.git
+git clone https://github.com/carlosmgv02/diagram-ai-generator.git
 cd diagram-ai-generator
 
 # Install in development mode
@@ -73,7 +73,7 @@ python3 scripts/run_mcp_server.py
 
 ```bash
 # Clone and run with Docker
-git clone https://github.com/diagram-ai/diagram-ai-generator.git
+git clone https://github.com/carlosmgv02/diagram-ai-generator.git
 cd diagram-ai-generator
 ./scripts/run_docker.sh
 ```
@@ -352,8 +352,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## 🆘 Support
 
 - 📚 **Documentation**: Check this README and `/docs` folder
-- 🐛 **Issues**: [GitHub Issues](https://github.com/diagram-ai/diagram-ai-generator/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/diagram-ai/diagram-ai-generator/discussions)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/carlosmgv02/diagram-ai-generator/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/carlosmgv02/diagram-ai-generator/discussions)
 
 ## ⭐ Star History
 
