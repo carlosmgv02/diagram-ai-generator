@@ -1,6 +1,12 @@
 import json
-from typing import Optional, Dict, Any
+from typing import Optional
 from src.application.mcp.tools.base_tool import BaseTool, register_tool
+from src.application.mcp.tools.tool_constants import (
+    LANGUAGE_INSTRUCTION,
+    SINGLE_CLOUD_EXAMPLE,
+    MULTI_CLOUD_EXAMPLE,
+    RECOMMENDED_WORKFLOW
+)
 
 class DiagramTool(BaseTool):
     @register_tool
@@ -9,90 +15,32 @@ class DiagramTool(BaseTool):
         diagram_spec: str,
         title: Optional[str] = None
     ) -> str:
-        """
-        🔥 HERRAMIENTA PRINCIPAL: Crea un diagrama de arquitectura a partir de una especificación JSON.
+        f"""
+        Create an architecture diagram from a JSON specification.
         
-        💡 FLUJO RECOMENDADO PARA ICONOS PROFESIONALES:
-        1. step1_list_providers() → Ver todos los proveedores disponibles
-        2. step2_get_categories("aws") → Ver categorías del proveedor elegido  
-        3. step3_get_nodes("aws", "compute") → Ver nodos exactos de la categoría
-        4. create_diagram_from_json() → Crear diagrama con nombres exactos obtenidos
+        {LANGUAGE_INSTRUCTION}
         
-        ⚠️ Usar nombres exactos de los pasos anteriores garantiza iconos correctos
-        
+        {RECOMMENDED_WORKFLOW}
+
         Args:
-            diagram_spec: Especificación JSON del diagrama. FORMATO EXACTO REQUERIDO:
+            diagram_spec: JSON specification of the diagram. Required format:
             
-            IMPORTANTE: 
-            - NO uses "children" - USA "clusters" 
-            - NO uses "Group" - USA los tipos correctos
-            - SIEMPRE incluye colores y estilos en las conexiones
+            SINGLE-CLOUD EXAMPLE:
+            {json.dumps(SINGLE_CLOUD_EXAMPLE, indent=2)}
             
-            {
-                "title": "Advanced Web Service with Monitoring",
-                "provider": "onprem", 
-                "layout": "vertical",
-                "components": [
-                    {
-                        "id": "nginx",
-                        "type": "Nginx",
-                        "category": "network", 
-                        "label": "ingress"
-                    }
-                ],
-                "connections": [
-                    {
-                        "from": "nginx", 
-                        "to": "server1",
-                        "color": "darkgreen",
-                        "style": "bold",
-                        "label": "HTTP"
-                    }
-                ],
-                "clusters": [
-                    {
-                        "name": "Service Cluster",
-                        "components": ["server1", "server2", "server3"]
-                    }
-                ]
-            }
+            MULTI-CLOUD EXAMPLE (use component_provider for each component):
+            {json.dumps(MULTI_CLOUD_EXAMPLE, indent=2)}
             
-            IMPORTANTE PARA MULTI-CLOUD CON ICONOS ESPECÍFICOS:
-            - Para diagramas SINGLE-CLOUD: usar "provider": "aws", "azure", "gcp", etc.
-            - Para diagramas MULTI-CLOUD: usar "component_provider" en cada componente
+            IMPORTANT:
+            - Use "clusters" (NOT "children")
+            - Use exact node names from get_category_nodes()
+            - Connections support: color, style, label
+            - Layouts: "horizontal" or "vertical"
             
-            EJEMPLO MULTI-CLOUD CON ICONOS ESPECÍFICOS:
-            {
-              "provider": "generic",
-              "components": [
-                {
-                  "id": "lambda",
-                  "type": "Lambda", 
-                  "category": "compute",
-                  "component_provider": "aws",
-                  "label": "AWS Lambda"
-                },
-                {
-                  "id": "azure_func",
-                  "type": "FunctionApps",
-                  "category": "compute", 
-                  "component_provider": "azure",
-                  "label": "Azure Functions"
-                },
-                {
-                  "id": "gcp_func",
-                  "type": "Functions", 
-                  "category": "compute",
-                  "component_provider": "gcp",
-                  "label": "GCP Functions"
-                }
-              ]
-            }
-            
-            title: Título opcional para el diagrama
+            title: Optional diagram title (overrides spec title)
         
         Returns:
-            Información del diagrama generado con imagen en base64
+            Diagram generation result with file path and details
         """
         try:
             # Parsear la especificación JSON
@@ -106,26 +54,26 @@ class DiagramTool(BaseTool):
             result = self.diagram_service.create_diagram_from_spec(spec)
             
             if result['success']:
-                response = f"""✅ Diagrama creado exitosamente!
+                response = f"""✅ Diagram created successfully!
 
-📊 **Detalles:**
-- Título: {result['title']}
-- Proveedor: {result['provider']}
-- Componentes: {result['components_count']}
-- Conexiones: {result['connections_count']}
-- Tamaño: {result['image_size_mb']} MB
+📊 Details:
+- Title: {result['title']}
+- Provider: {result['provider']}
+- Components: {result['components_count']}
+- Connections: {result['connections_count']}
+- Size: {result['image_size_mb']} MB
 
-📁 **Archivo guardado en:** `{result['file_path']}`
+📁 File saved at: `{result['file_path']}`
 
-Para abrir el archivo: `open "{result['file_path']}"`
+To open: `open "{result['file_path']}"`
 
-🖼️ **Imagen guardada localmente** (usar el comando 'open' de arriba para visualizar)"""
+🖼️ Image saved locally (use the 'open' command above to view)"""
                 
                 return response
             else:
                 return f"❌ Error: {result['error']}"
                 
         except json.JSONDecodeError as e:
-            return f"❌ Error: JSON inválido - {str(e)}"
+            return f"❌ Error: Invalid JSON - {str(e)}"
         except Exception as e:
-            return f"❌ Error generando diagrama: {str(e)}"
+            return f"❌ Error generating diagram: {str(e)}"

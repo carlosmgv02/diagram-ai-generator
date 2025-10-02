@@ -1,37 +1,39 @@
-from typing import List
 from src.application.mcp.tools.base_tool import BaseTool, register_tool
+from src.application.mcp.tools.tool_constants import LANGUAGE_INSTRUCTION
 
 class NodesTool(BaseTool):
     @register_tool
-    def step3_get_nodes(self, provider: str, category: str) -> str:
-        """
-        🔥 PASO 3 OBLIGATORIO: Obtiene TODOS los nodos de una categoría específica.
+    def get_category_nodes(self, provider: str, category: str) -> str:
+        f"""
+        Get ALL nodes/icons available for a specific provider category.
         
-        DEBES usar step2_get_categories() PRIMERO.
+        {LANGUAGE_INSTRUCTION}
+        
+        This is STEP 3 of the recommended workflow. Use get_provider_categories() first.
         
         Args:
-            provider: Proveedor (aws, azure, gcp, k8s, etc.)
-            category: Categoría exacta (compute, network, database, etc.)
+            provider: Provider name (aws, azure, gcp, k8s, etc.)
+            category: Exact category name (compute, network, database, etc.)
         
         Returns:
-            Lista completa de nodos para usar en create_diagram_from_json
+            Complete list of nodes to use in create_diagram_from_json with exact names
         """
         try:
             provider = provider.lower()
             nodes = self.diagram_service.get_category_nodes(provider, category)
             
             if not nodes:
-                return f"❌ No se encontraron nodos para {provider}/{category}\n\n🔥 **DEBES USAR:** step2_get_categories(\"{provider}\") para ver categorías válidas"
+                return f"❌ No nodes found for {provider}/{category}\n\n➡️ USE: get_provider_categories(\"{provider}\") to see valid categories"
             
-            response = f"🔥 **PASO 3: NODOS DE {provider.upper()}/{category.upper()}**\n\n"
+            response = f"🎨 NODES FOR {provider.upper()}/{category.upper()}\n\n"
             for i, node in enumerate(nodes, 1):
                 response += f"{i}. **{node}**\n"
             
-            response += f"\n✅ **Total:** {len(nodes)} nodos disponibles"
-            response += f"\n\n🔥 **USAR ESTOS NOMBRES EXACTOS EN create_diagram_from_json**"
-            response += f"\n💡 **Formato JSON:** {{\"type\": \"{nodes[0] if nodes else 'NombreNodo'}\", \"category\": \"{category}\"}}"
+            response += f"\n✅ Total: {len(nodes)} nodes available"
+            response += f"\n\n⚠️  USE THESE EXACT NAMES in create_diagram_from_json"
+            response += f"\n💡 JSON format: {{\"type\": \"{nodes[0] if nodes else 'NodeName'}\", \"category\": \"{category}\"}}"
             
-            response += f"\n\n✅ **¡FLUJO COMPLETADO! Ahora puedes usar create_diagram_from_json()**"
+            response += f"\n\n✅ WORKFLOW COMPLETE! Now use create_diagram_from_json()"
             
             return response
             

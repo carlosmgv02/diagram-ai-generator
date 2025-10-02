@@ -1,72 +1,68 @@
+from typing import Dict, Any
 from src.application.mcp.tools.base_tool import BaseTool, register_tool
+from src.application.mcp.tools.tool_constants import LANGUAGE_INSTRUCTION, MULTI_CLOUD_EXAMPLE
+import json
 
-class MulticloudTool(BaseTool):
+class MultiCloudTool(BaseTool):
     @register_tool
-    def multicloud_helper(self) -> str:
-        """
-        🌐 HERRAMIENTA ESPECÍFICA PARA DIAGRAMAS MULTI-CLOUD
+    def create_multicloud_diagram(
+        self,
+        title: str,
+        components: str,
+        connections: str = "[]",
+        layout: str = "horizontal"
+    ) -> str:
+        f"""
+        Create a multi-cloud architecture diagram with components from different providers.
         
-        Explica cómo crear diagramas que incluyen múltiples proveedores cloud.
+        {LANGUAGE_INSTRUCTION}
+        
+        This is a convenience tool for multi-cloud scenarios. Each component can specify
+        its own provider using "component_provider".
+        
+        Args:
+            title: Diagram title
+            components: JSON array of components with component_provider field
+            connections: JSON array of connections (optional)
+            layout: "horizontal" or "vertical" (default: horizontal)
+        
+        Example components:
+        {json.dumps(MULTI_CLOUD_EXAMPLE['components'], indent=2)}
         
         Returns:
-            Guía completa para diagramas multi-cloud con ejemplos
+            Diagram generation result
         """
-        return """🌐 **GUÍA COMPLETA PARA DIAGRAMAS MULTI-CLOUD**
+        try:
+            components_list = json.loads(components)
+            connections_list = json.loads(connections)
+            
+            spec = {
+                "title": title,
+                "provider": "generic",  # Multi-cloud uses generic base
+                "layout": layout,
+                "components": components_list,
+                "connections": connections_list,
+                "clusters": []
+            }
+            
+            result = self.diagram_service.create_diagram_from_spec(spec)
+            
+            if result['success']:
+                return f"""✅ Multi-cloud diagram created!
 
-## 🎯 **NUEVA FUNCIONALIDAD: ICONOS ESPECÍFICOS EN MULTI-CLOUD**
+📊 Details:
+- Title: {result['title']}
+- Components: {result['components_count']} (from multiple providers)
+- Connections: {result['connections_count']}
+- Size: {result['image_size_mb']} MB
 
-⚠️ **OPCIONES DISPONIBLES:**
-- OPCIÓN A: Iconos genéricos consistentes
-- OPCIÓN B: Iconos específicos de cada proveedor (RECOMENDADO)
+📁 File: `{result['file_path']}`
 
-## ✅ **OPCIÓN B - ICONOS ESPECÍFICOS (NUEVO):**
-
-```json
-{
-  "provider": "generic",
-  "components": [
-    {
-      "id": "lambda",
-      "type": "Lambda",
-      "category": "compute", 
-      "component_provider": "aws",
-      "label": "AWS Lambda"
-    },
-    {
-      "id": "azure_func", 
-      "type": "FunctionApps",
-      "category": "compute",
-      "component_provider": "azure", 
-      "label": "Azure Functions"
-    },
-    {
-      "id": "gcp_func",
-      "type": "Functions", 
-      "category": "compute",
-      "component_provider": "gcp",
-      "label": "GCP Functions"
-    }
-  ]
-}
-```
-
-## 🔑 **PUNTOS CLAVE:**
-1. **Provider base:** "generic" 
-2. **Component_provider:** Especifica el proveedor real de cada componente
-3. **Type:** Usa el nombre exacto del servicio (Lambda, FunctionApps, Functions)
-4. **Resultado:** Iconos específicos de AWS, Azure, GCP en un mismo diagrama
-
-## ✅ **VENTAJAS:**
-- ✅ Iconos de AWS Lambda reales
-- ✅ Iconos de Azure Functions reales  
-- ✅ Iconos de GCP Functions reales
-- ✅ Diagrama profesional multi-cloud
-
-## 📋 **FLUJO RECOMENDADO:**
-1. step2_get_categories("aws") → Ver categorías AWS
-2. step3_get_nodes("aws", "compute") → Ver "Lambda"
-3. step2_get_categories("azure") → Ver categorías Azure  
-4. step3_get_nodes("azure", "compute") → Ver "FunctionApps"
-5. step2_get_categories("gcp") → Ver categorías GCP
-6. step3_get_nodes("gcp", "compute") → Ver "Functions"
-7. Crear JSON con component_provider específico"""
+To open: `open "{result['file_path']}"`"""
+            else:
+                return f"❌ Error: {result['error']}"
+                
+        except json.JSONDecodeError as e:
+            return f"❌ Error: Invalid JSON - {str(e)}"
+        except Exception as e:
+            return f"❌ Error: {str(e)}"

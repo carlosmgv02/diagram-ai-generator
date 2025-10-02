@@ -1,2 +1,1 @@
-# Domain layer
-
+"""Domain layer - business logic and entities"""

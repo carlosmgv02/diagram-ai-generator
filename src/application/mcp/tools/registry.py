@@ -4,7 +4,7 @@ from src.application.mcp.tools.providers_tool import ProvidersTool
 from src.application.mcp.tools.categories_tool import CategoriesTool
 from src.application.mcp.tools.nodes_tool import NodesTool
 from src.application.mcp.tools.diagram_tool import DiagramTool
-from src.application.mcp.tools.multicloud_tool import MulticloudTool
+from src.application.mcp.tools.multicloud_tool import MultiCloudTool
 from src.application.services.diagram_service import DiagramService
 
 
@@ -21,7 +21,7 @@ class ToolRegistry:
             CategoriesTool,
             NodesTool,
             DiagramTool,
-            MulticloudTool,
+            MultiCloudTool,
         ]
         for tool_class in tool_classes:
             instance = tool_class(self.diagram_service)
@@ -32,7 +32,8 @@ class ToolRegistry:
         methods = {}
         for tool_instance in self._tools.values():
             for name in dir(tool_instance):
-                if name.startswith("step") or name == "create_diagram_from_json" or name == "multicloud_helper":
+                # Include all methods that don't start with underscore and are registered
+                if not name.startswith("_") and hasattr(getattr(tool_instance, name), '_is_mcp_tool'):
                     method = getattr(tool_instance, name)
                     if callable(method):
                         methods[name] = method

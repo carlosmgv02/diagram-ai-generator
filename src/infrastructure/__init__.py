@@ -1,1 +1,1 @@
-"""Infrastructure layer for Diagram AI Generator"""
+"""Infrastructure layer - external dependencies and adapters"""

@@ -1,35 +1,37 @@
-from typing import List
 from src.application.mcp.tools.base_tool import BaseTool, register_tool
+from src.application.mcp.tools.tool_constants import LANGUAGE_INSTRUCTION
 
 class CategoriesTool(BaseTool):
     @register_tool
-    def step2_get_categories(self, provider: str) -> str:
-        """
-        🔥 PASO 2 OBLIGATORIO: Obtiene categorías de UN proveedor específico.
+    def get_provider_categories(self, provider: str) -> str:
+        f"""
+        Get all categories available for a specific cloud provider.
         
-        DEBES usar step1_list_providers() PRIMERO.
+        {LANGUAGE_INSTRUCTION}
+        
+        This is STEP 2 of the recommended workflow. Use list_providers() first.
         
         Args:
-            provider: Nombre exacto del proveedor (aws, azure, gcp, k8s, onprem, etc.)
+            provider: Exact provider name (aws, azure, gcp, k8s, onprem, etc.)
         
         Returns:
-            Lista de categorías del proveedor seleccionado
+            List of categories for the selected provider
         """
         try:
             provider = provider.lower()
             categories = self.diagram_service.get_provider_categories(provider)
             
             if not categories:
-                return f"❌ Proveedor '{provider}' no encontrado.\n\n🔥 **DEBES USAR:** step1_list_providers() para ver opciones válidas"
+                return f"❌ Provider '{provider}' not found.\n\n➡️ USE: list_providers() to see valid options"
             
-            response = f"🔥 **PASO 2: CATEGORÍAS DE {provider.upper()}**\n\n"
+            response = f"📂 CATEGORIES FOR {provider.upper()}\n\n"
             for i, category in enumerate(categories, 1):
                 nodes_count = len(self.diagram_service.get_category_nodes(provider, category))
-                response += f"{i}. **{category}** ({nodes_count} nodos)\n"
+                response += f"{i}. **{category}** ({nodes_count} nodes)\n"
             
-            response += f"\n✅ **Total:** {len(categories)} categorías"
-            response += f"\n\n🔥 **SIGUIENTE PASO OBLIGATORIO:** step3_get_nodes(\"{provider}\", \"categoria\")"
-            response += f"\n💡 **Ejemplo:** step3_get_nodes(\"{provider}\", \"compute\") para ver nodos de compute"
+            response += f"\n✅ Total: {len(categories)} categories"
+            response += f"\n\n➡️  NEXT STEP: get_category_nodes(\"{provider}\", \"category\")"
+            response += f"\n💡 Example: get_category_nodes(\"{provider}\", \"compute\") for compute nodes"
             
             return response
             
