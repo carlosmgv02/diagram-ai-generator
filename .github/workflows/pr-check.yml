@@ -31,15 +31,18 @@ jobs:
           echo "Changed files:"
           echo "$CHANGED_FILES"
           
-          # Check if only docs/README changed
-          if echo "$CHANGED_FILES" | grep -qvE '^(README\.md|docs/|\.github/|CHANGELOG\.md|LICENSE)'; then
+          # Files that don't trigger releases (must match release.yml paths-ignore)
+          IGNORE_PATTERN='^(README\.md|docs/|\.github/|CHANGELOG\.md|LICENSE|\.gitignore|\.dockerignore|\.env\.example|\.pypirc\.example|Makefile|pytest\.ini|requirements\.txt|.*\.md|\.editorconfig|\.vscode/|\.idea/|\.DS_Store)'
+          
+          # Check if only non-code files changed
+          if echo "$CHANGED_FILES" | grep -qvE "$IGNORE_PATTERN"; then
             echo "needs_release=true" >> $GITHUB_OUTPUT
             echo "change_type=code" >> $GITHUB_OUTPUT
             echo "📦 Code changes detected - Release will be created"
           else
             echo "needs_release=false" >> $GITHUB_OUTPUT
             echo "change_type=docs" >> $GITHUB_OUTPUT
-            echo "📝 Only documentation changes - No release needed"
+            echo "📝 Only documentation/config changes - No release needed"
           fi
 
       - name: Comment PR

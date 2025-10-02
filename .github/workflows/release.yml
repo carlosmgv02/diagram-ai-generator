@@ -11,6 +11,17 @@ on:
       - '.github/**'
       - 'CHANGELOG.md'
       - 'LICENSE'
+      - '.gitignore'
+      - '.dockerignore'
+      - '.env.example'
+      - '.pypirc.example'
+      - 'Makefile'
+      - 'pytest.ini'
+      - 'requirements.txt'
+      - '*.md'
+      - '.editorconfig'
+      - '.vscode/**'
+      - '.idea/**'
 
 jobs:
   check-version:
