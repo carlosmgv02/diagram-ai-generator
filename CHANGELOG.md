@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.6] - 2025-10-02
+
+### ✨ Added
+- Refactor MCP tools and diagram service architecture  [`c47325f`](https://github.com/carlosmgv02/diagram-ai-generator/commit/c47325f) ([#6)(#6](https://github.com/carlosmgv02/diagram-ai-generator/pull/6)
+- remove unnecessary files  [`0114ca4`](https://github.com/carlosmgv02/diagram-ai-generator/commit/0114ca4) ([#5)(#5](https://github.com/carlosmgv02/diagram-ai-generator/pull/5)
+
+### 🔧 Changed
+- update CHANGELOG for v1.0.5 [`814aa59`](https://github.com/carlosmgv02/diagram-ai-generator/commit/814aa59)
+
+### 📝 Other
+- Change image link to GitHub hosted version [`afb409d`](https://github.com/carlosmgv02/diagram-ai-generator/commit/afb409d)
+
+
 ## [1.0.5] - 2025-10-02
 
 ### ⚠️ BREAKING CHANGES
