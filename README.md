@@ -38,45 +38,68 @@ The AI understands your requirements and generates **production-ready** diagrams
 
 ## 🚀 Quick Start
 
-### Option 1: Install from PyPI (Recommended)
+### Step 1: Install the package
 
 ```bash
-# Install the package
 pip install diagram-ai-generator
-
-# Start the MCP server
-diagram-ai-mcp
-
-# Or use programmatically
-python3 -c "
-from src import DiagramService
-service = DiagramService()
-print('✅ Diagram AI Generator ready!')
-"
 ```
 
-### Option 2: Development Installation
-
+**Note:** Use your system Python (the one Claude Desktop uses):
 ```bash
-# Clone the repository
-git clone https://github.com/carlosmgv02/diagram-ai-generator.git
-cd diagram-ai-generator
+# macOS
+/usr/local/bin/python3 -m pip install diagram-ai-generator
 
-# Install in development mode
-pip install -e .
-
-# Start the MCP server
-python3 scripts/run_mcp_server.py
+# Or force install from PyPI
+pip install diagram-ai-generator
 ```
 
-### Option 3: Docker (Containerized)
+### Step 2: Configure Claude Desktop
 
-```bash
-# Clone and run with Docker
-git clone https://github.com/carlosmgv02/diagram-ai-generator.git
-cd diagram-ai-generator
-./scripts/run_docker.sh
+That's it! Now configure it in Claude Desktop (see next section).
+
+## 🔌 Claude Desktop Configuration
+
+Edit your `claude_desktop_config.json`:
+
+**Location:**
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+- **Linux**: `~/.config/Claude/claude_desktop_config.json`
+
+**Basic Configuration:**
+
+```json
+{
+    "mcpServers": {
+        "diagram-ai-generator": {
+            "command": "python3",
+            "args": ["-m", "src.application.mcp.server_modular"]
+        }
+    }
+}
 ```
+
+**With Custom Output Directory (Optional):**
+
+```json
+{
+    "mcpServers": {
+        "diagram-ai-generator": {
+            "command": "python3",
+            "args": ["-m", "src.application.mcp.server_modular"],
+            "env": {
+                "DIAGRAM_OUTPUT_DIR": "/Users/yourname/diagrams"
+            }
+        }
+    }
+}
+```
+
+The output directory will be created automatically if it doesn't exist. If not specified, diagrams are saved to `./generated_diagrams/` in your current directory.
+
+**After configuration:**
+1. Restart Claude Desktop
+2. Start using it! Ask Claude to create architecture diagrams
 
 ## 🛠️ Usage
 
@@ -230,54 +253,27 @@ The MCP server provides 5 professional tools for creating diagrams:
 - Add `"component_provider": "aws"` to each component
 - Use exact node names from `step3_get_nodes()`
 
-## 📦 Docker Deployment
-
-### Development
-```bash
-cd docker
-docker-compose up -d
-```
-
-### Production
-```bash
-# Build production image
-docker build -f docker/Dockerfile -t diagram-ai-generator .
-
-# Run with custom configuration
-docker run -d \
-  -p 8080:8080 \
-  -v $(pwd)/generated_diagrams:/app/generated_diagrams \
-  diagram-ai-generator
-```
-
-## 🔧 Configuration
-
-### Environment Variables
-- `PYTHONPATH`: Set to project root (auto-configured)
-- `PYTHONUNBUFFERED`: Enable real-time logging (auto-configured)
+## ⚙️ Configuration Options
 
 ### Output Directory
-Generated diagrams are saved to `generated_diagrams/` by default.
 
-## 🏗️ Architecture
+By default, diagrams are saved to `./generated_diagrams/`. You can customize this:
 
+```json
+{
+    "mcpServers": {
+        "diagram-ai-generator": {
+            "command": "python3",
+            "args": ["-m", "src.application.mcp.server_modular"],
+            "env": {
+                "DIAGRAM_OUTPUT_DIR": "/path/to/your/diagrams"
+            }
+        }
+    }
+}
 ```
-src/
-├── application/
-│   ├── mcp/
-│   │   ├── server_modular.py      # Main MCP server
-│   │   └── tools/                 # Individual MCP tools
-│   │       ├── providers_tool.py  # List providers
-│   │       ├── categories_tool.py # Get categories  
-│   │       ├── nodes_tool.py      # Get nodes
-│   │       ├── diagram_tool.py    # Create diagrams
-│   │       └── multicloud_tool.py # Multi-cloud helper
-│   └── services/
-│       └── diagram_service.py     # Core diagram logic
-└── infrastructure/
-    └── external/
-        └── diagrams_structure.json # Provider/node mapping
-```
+
+The directory will be created automatically if it doesn't exist.
 
 ## 🧠 Smart Features
 
@@ -309,41 +305,25 @@ When you use incorrect node names, the system suggests alternatives:
 
 ### Common Issues
 
-**1. MCP Server Not Starting**
+**1. Module not found error**
+Make sure you installed in the correct Python:
 ```bash
-# Check Python version
-python3 --version  # Should be 3.9+
-
-# Install MCP dependencies
-pip install "mcp>=0.1.0"
+/usr/local/bin/python3 -m pip install --index-url https://pypi.org/simple diagram-ai-generator
 ```
 
-**2. Graphviz Not Found**
+**2. Graphviz not found**
 ```bash
-# Ubuntu/Debian
-sudo apt-get install graphviz graphviz-dev
-
 # macOS  
 brew install graphviz
+
+# Ubuntu/Debian
+sudo apt-get install graphviz
 ```
 
-**3. Generic Icons in Multi-Cloud**
-- Use `"provider": "generic"` 
-- Add `"component_provider": "aws"` to each component
-- Follow the exact JSON format from examples
-
-**4. Node Not Found Errors**
-- Use `step3_get_nodes()` to get exact names
-- Check the suggestions in console output
-- Use `multicloud_helper()` for guidance
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+**3. Custom output directory not working**
+- Make sure the path exists or the directory is writable
+- Use absolute paths in the configuration
+- Check Claude Desktop logs for errors
 
 ## 📄 License
 
@@ -351,14 +331,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 🆘 Support
 
-- 📚 **Documentation**: Check this README and `/docs` folder
 - 🐛 **Issues**: [GitHub Issues](https://github.com/carlosmgv02/diagram-ai-generator/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/carlosmgv02/diagram-ai-generator/discussions)
-
-## ⭐ Star History
-
-If this project helps you, please consider giving it a star! ⭐
 
 ---
 
-Made with ❤️ by the Diagram AI Generator Team
+Made by [Carlos Martínez García-Villarrubia](https://github.com/carlosmgv02)
